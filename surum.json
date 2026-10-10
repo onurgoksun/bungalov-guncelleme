@@ -1,20 +1,19 @@
 {
- "build": 42,
- "version": "4.2",
+ "build": 43,
+ "version": "4.3",
  "notes": [
-  "Yeni ana ekran: güncellemeler ve hesabınız tek ekranda",
-  "Hesaptan çıkış: sol alttaki bulut simgesi → Hesaptan çıkış yap ya da ana ekrandaki Çıkış yap",
-  "Çıkış yapınca ana ekrana dönülür, başka kullanıcı giriş yapabilir"
+  "Yeni ana ekran arka planı: dağ gölü fotoğrafı, gün batımı ışığı",
+  "Canlı efektler: dalgalanan göl ve parıltılar, süzülen sis, güneş ışınları, uçuşan ışık zerreleri ve yapraklar"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_42_windows.pck",
-  "sha256": "54420ea4e43351632328039f6224cb527d15b41267f76a6701cd906911d42f2c",
-  "size": 1202128
+  "file": "paketler/bungalov_43_windows.pck",
+  "sha256": "37c5a812da6ee766ba2e9237ac10003f177b43a73811b745a7431830656b6d6f",
+  "size": 1486096
  },
  "android": {
-  "file": "paketler/bungalov_42_android.pck",
-  "sha256": "54420ea4e43351632328039f6224cb527d15b41267f76a6701cd906911d42f2c",
-  "size": 1202128
+  "file": "paketler/bungalov_43_android.pck",
+  "sha256": "37c5a812da6ee766ba2e9237ac10003f177b43a73811b745a7431830656b6d6f",
+  "size": 1486096
  }
 }
