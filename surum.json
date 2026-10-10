@@ -1,20 +1,20 @@
 {
- "build": 59,
- "version": "4.11",
+ "build": 60,
+ "version": "4.11.1",
  "notes": [
-  "Hafta sonu fiyatı artık Cuma ve Cumartesi gecelerine uygulanır; Pazar gecesi hafta içi fiyatındadır",
-  "İleri tarihli oluşturulmuş fiyatlar yeni kurala göre kendiliğinden düzeltildi (elle değiştirdiğiniz fiyatlar korunur)",
-  "Giriş ekranında \"Beni hatırla\""
+  "Tarayıcı (iPhone/iPad) sürümünde bulut bağlantısı düzeltildi",
+  "İlk eşitleme yarıda kalırsa uygulama artık kendiliğinden yeniden dener",
+  "\"Şimdi eşitle\" sonucu ve hata sebebi gösterilir"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_59_windows.pck",
-  "sha256": "71a705fe56cbfcdaee9c9bf17aa6608abbc2f0337271970bd73550fdc38f4f94",
-  "size": 2510080
+  "file": "paketler/bungalov_60_windows.pck",
+  "sha256": "4b7e0b13dd503d55693d8e5dcd54f29a4ff464dbccd2b473815e06c04c3d7642",
+  "size": 2512720
  },
  "android": {
-  "file": "paketler/bungalov_59_android.pck",
-  "sha256": "71a705fe56cbfcdaee9c9bf17aa6608abbc2f0337271970bd73550fdc38f4f94",
-  "size": 2510080
+  "file": "paketler/bungalov_60_android.pck",
+  "sha256": "4b7e0b13dd503d55693d8e5dcd54f29a4ff464dbccd2b473815e06c04c3d7642",
+  "size": 2512720
  }
 }
