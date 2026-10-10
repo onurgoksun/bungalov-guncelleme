@@ -1,19 +1,19 @@
 {
- "build": 57,
- "version": "4.10",
+ "build": 58,
+ "version": "4.10.1",
  "notes": [
-  "Ardışık gün indirimi yenilendi: kalınan gece sayısına göre bütün gecelere aynı indirim (2 gece −1.000, 3 gece −2.000 …)",
-  "Telefon ve tarayıcıda ekranın tamamı kullanılır"
+  "Giriş ekranında \"Beni hatırla\": açıksa giriş cihazda kalır ve kullanıcı adı hatırlanır",
+  "Kalış süresi indirimi ve tam ekran"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_57_windows.pck",
-  "sha256": "9f05092c50fb91a5eaab28d5403b4f30e9d10550598e57e509e8ab43512c69c7",
-  "size": 2508096
+  "file": "paketler/bungalov_58_windows.pck",
+  "sha256": "29ae637646454530dd367793c05289818dd1dde601a5fbf5cd96709c68a8891b",
+  "size": 2509184
  },
  "android": {
-  "file": "paketler/bungalov_57_android.pck",
-  "sha256": "9f05092c50fb91a5eaab28d5403b4f30e9d10550598e57e509e8ab43512c69c7",
-  "size": 2508096
+  "file": "paketler/bungalov_58_android.pck",
+  "sha256": "29ae637646454530dd367793c05289818dd1dde601a5fbf5cd96709c68a8891b",
+  "size": 2509184
  }
 }
