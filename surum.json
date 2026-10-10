@@ -1,19 +1,20 @@
 {
- "build": 58,
- "version": "4.10.1",
+ "build": 59,
+ "version": "4.11",
  "notes": [
-  "Giriş ekranında \"Beni hatırla\": açıksa giriş cihazda kalır ve kullanıcı adı hatırlanır",
-  "Kalış süresi indirimi ve tam ekran"
+  "Hafta sonu fiyatı artık Cuma ve Cumartesi gecelerine uygulanır; Pazar gecesi hafta içi fiyatındadır",
+  "İleri tarihli oluşturulmuş fiyatlar yeni kurala göre kendiliğinden düzeltildi (elle değiştirdiğiniz fiyatlar korunur)",
+  "Giriş ekranında \"Beni hatırla\""
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_58_windows.pck",
-  "sha256": "29ae637646454530dd367793c05289818dd1dde601a5fbf5cd96709c68a8891b",
-  "size": 2509184
+  "file": "paketler/bungalov_59_windows.pck",
+  "sha256": "71a705fe56cbfcdaee9c9bf17aa6608abbc2f0337271970bd73550fdc38f4f94",
+  "size": 2510080
  },
  "android": {
-  "file": "paketler/bungalov_58_android.pck",
-  "sha256": "29ae637646454530dd367793c05289818dd1dde601a5fbf5cd96709c68a8891b",
-  "size": 2509184
+  "file": "paketler/bungalov_59_android.pck",
+  "sha256": "71a705fe56cbfcdaee9c9bf17aa6608abbc2f0337271970bd73550fdc38f4f94",
+  "size": 2510080
  }
 }
