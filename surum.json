@@ -1,20 +1,20 @@
 {
- "build": 48,
- "version": "4.5.3",
+ "build": 49,
+ "version": "4.5.4",
  "notes": [
-  "Giriş yapılamazsa sebebi daha doğru gösteriliyor",
-  "Giriş ekranında \"Şifreyi göster\"",
+  "Takvim: her gün ayrı, kenarlı ve tarihli kutu",
+  "Takvim: canlı satır renkleri ve dolu renkli konaklama çubukları",
   "Karanlık mod ve yeni simgeler"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_48_windows.pck",
-  "sha256": "6f0629af9cd0cb1549758ddf2d4926802e353ef6747d0d695a4dc61464d65a54",
-  "size": 2330432
+  "file": "paketler/bungalov_49_windows.pck",
+  "sha256": "8db554c2e8023ce9cc6d93370bf686c55f5007eabf8ba1e486e97090bd5f2858",
+  "size": 2331712
  },
  "android": {
-  "file": "paketler/bungalov_48_android.pck",
-  "sha256": "6f0629af9cd0cb1549758ddf2d4926802e353ef6747d0d695a4dc61464d65a54",
-  "size": 2330432
+  "file": "paketler/bungalov_49_android.pck",
+  "sha256": "8db554c2e8023ce9cc6d93370bf686c55f5007eabf8ba1e486e97090bd5f2858",
+  "size": 2331712
  }
 }
