@@ -1,19 +1,19 @@
 {
- "build": 43,
- "version": "4.3",
+ "build": 44,
+ "version": "4.4",
  "notes": [
-  "Yeni ana ekran arka planı: dağ gölü fotoğrafı, gün batımı ışığı",
-  "Canlı efektler: dalgalanan göl ve parıltılar, süzülen sis, güneş ışınları, uçuşan ışık zerreleri ve yapraklar"
+  "Yeni yazı tipi: başlıklar ve büyük rakamlar Claude tarzı zarif serif (Source Serif 4)",
+  "Ana ekranda canlı göl manzarası (4.3)"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_43_windows.pck",
-  "sha256": "37c5a812da6ee766ba2e9237ac10003f177b43a73811b745a7431830656b6d6f",
-  "size": 1486096
+  "file": "paketler/bungalov_44_windows.pck",
+  "sha256": "4b1451e886628493f76f2272f25b1dbaedb05841f99017a7c327bac84b46641f",
+  "size": 2114944
  },
  "android": {
-  "file": "paketler/bungalov_43_android.pck",
-  "sha256": "37c5a812da6ee766ba2e9237ac10003f177b43a73811b745a7431830656b6d6f",
-  "size": 1486096
+  "file": "paketler/bungalov_44_android.pck",
+  "sha256": "4b1451e886628493f76f2272f25b1dbaedb05841f99017a7c327bac84b46641f",
+  "size": 2114944
  }
 }
