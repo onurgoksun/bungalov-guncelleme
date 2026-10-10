@@ -1,20 +1,20 @@
 {
- "build": 47,
- "version": "4.5.2",
+ "build": 48,
+ "version": "4.5.3",
  "notes": [
-  "Giriş ekranına \"Şifreyi göster\" eklendi",
-  "Giriş hatalarında sebep artık açıkça yazıyor (yanlış şifre / hesap onaylanmamış)",
+  "Giriş yapılamazsa sebebi daha doğru gösteriliyor",
+  "Giriş ekranında \"Şifreyi göster\"",
   "Karanlık mod ve yeni simgeler"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_47_windows.pck",
-  "sha256": "734552db3f643472c69f29c62fa1033587dbcab597f7f63f6be03221ab4a710e",
-  "size": 2330224
+  "file": "paketler/bungalov_48_windows.pck",
+  "sha256": "6f0629af9cd0cb1549758ddf2d4926802e353ef6747d0d695a4dc61464d65a54",
+  "size": 2330432
  },
  "android": {
-  "file": "paketler/bungalov_47_android.pck",
-  "sha256": "734552db3f643472c69f29c62fa1033587dbcab597f7f63f6be03221ab4a710e",
-  "size": 2330224
+  "file": "paketler/bungalov_48_android.pck",
+  "sha256": "6f0629af9cd0cb1549758ddf2d4926802e353ef6747d0d695a4dc61464d65a54",
+  "size": 2330432
  }
 }
