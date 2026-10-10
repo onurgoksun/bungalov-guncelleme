@@ -1,20 +1,19 @@
 {
- "build": 50,
- "version": "4.5.5",
+ "build": 51,
+ "version": "4.6",
  "notes": [
-  "Takvim: daha canlı renkler (sarı gerçekten sarı)",
-  "Takvim: geçmiş günler çizgili gri — işlem yapılamayacağı belli",
-  "Konaklama çubuklarına beyaz çerçeve"
+  "Ayarlar → Yedek → \"Konaklama aktar\": eski kayıtları (Excel) dosyadan aktarma",
+  "Takvimde canlı renkler ve çizgili geçmiş günler"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_50_windows.pck",
-  "sha256": "c1a45a63bc253a4c7e244d316e3a990e1343ac34ae1739cf21b3ff862f2a0444",
-  "size": 2332192
+  "file": "paketler/bungalov_51_windows.pck",
+  "sha256": "e10b494a961aef31f09fa7202e3f1828b1929996b69b41d310d200cdfdb2510d",
+  "size": 2336464
  },
  "android": {
-  "file": "paketler/bungalov_50_android.pck",
-  "sha256": "c1a45a63bc253a4c7e244d316e3a990e1343ac34ae1739cf21b3ff862f2a0444",
-  "size": 2332192
+  "file": "paketler/bungalov_51_android.pck",
+  "sha256": "e10b494a961aef31f09fa7202e3f1828b1929996b69b41d310d200cdfdb2510d",
+  "size": 2336464
  }
 }
