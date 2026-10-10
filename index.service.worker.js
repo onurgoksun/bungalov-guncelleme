@@ -4,7 +4,7 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1791639483|5364289';
+const CACHE_VERSION = '1791676414|4527852';
 /** @type {string} */
 const CACHE_PREFIX = 'Bungalov Yönetim-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
