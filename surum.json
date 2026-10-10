@@ -1,19 +1,20 @@
 {
- "build": 44,
- "version": "4.4",
+ "build": 45,
+ "version": "4.5",
  "notes": [
-  "Yeni yazı tipi: başlıklar ve büyük rakamlar Claude tarzı zarif serif (Source Serif 4)",
-  "Ana ekranda canlı göl manzarası (4.3)"
+  "Karanlık mod: Ayarlar → Görünüm → Karanlık mod",
+  "Sol menüde yeni simgeler",
+  "Yeni uygulama simgesi (bungalov)"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_44_windows.pck",
-  "sha256": "4b1451e886628493f76f2272f25b1dbaedb05841f99017a7c327bac84b46641f",
-  "size": 2114944
+  "file": "paketler/bungalov_45_windows.pck",
+  "sha256": "8b50e12dccc7e7e355e85d08f9e09826cc0ea3d2822d119e787b8dfdb97f38d9",
+  "size": 2279600
  },
  "android": {
-  "file": "paketler/bungalov_44_android.pck",
-  "sha256": "4b1451e886628493f76f2272f25b1dbaedb05841f99017a7c327bac84b46641f",
-  "size": 2114944
+  "file": "paketler/bungalov_45_android.pck",
+  "sha256": "8b50e12dccc7e7e355e85d08f9e09826cc0ea3d2822d119e787b8dfdb97f38d9",
+  "size": 2279600
  }
 }
