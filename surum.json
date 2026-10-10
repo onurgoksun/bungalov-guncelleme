@@ -1,20 +1,20 @@
 {
- "build": 46,
- "version": "4.5.1",
+ "build": 47,
+ "version": "4.5.2",
  "notes": [
-  "Açılış ekranında artık bungalov simgesi görünüyor",
-  "Karanlık mod: Ayarlar → Görünüm → Karanlık mod",
-  "Sol menüde yeni simgeler"
+  "Giriş ekranına \"Şifreyi göster\" eklendi",
+  "Giriş hatalarında sebep artık açıkça yazıyor (yanlış şifre / hesap onaylanmamış)",
+  "Karanlık mod ve yeni simgeler"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_46_windows.pck",
-  "sha256": "1c4119e35b3c1310e9f965bd2a8f5fd9a91a26d42d16d04c373106c388836d37",
-  "size": 2329184
+  "file": "paketler/bungalov_47_windows.pck",
+  "sha256": "734552db3f643472c69f29c62fa1033587dbcab597f7f63f6be03221ab4a710e",
+  "size": 2330224
  },
  "android": {
-  "file": "paketler/bungalov_46_android.pck",
-  "sha256": "1c4119e35b3c1310e9f965bd2a8f5fd9a91a26d42d16d04c373106c388836d37",
-  "size": 2329184
+  "file": "paketler/bungalov_47_android.pck",
+  "sha256": "734552db3f643472c69f29c62fa1033587dbcab597f7f63f6be03221ab4a710e",
+  "size": 2330224
  }
 }
