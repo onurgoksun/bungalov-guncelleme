@@ -1,18 +1,20 @@
 {
- "build": 41,
- "version": "4.1",
+ "build": 42,
+ "version": "4.2",
  "notes": [
-  "Uygulama içinden güncelleme: yeni sürüm çıkınca açılışta haber verir, tek tuşla güncellenir"
+  "Yeni ana ekran: güncellemeler ve hesabınız tek ekranda",
+  "Hesaptan çıkış: sol alttaki bulut simgesi → Hesaptan çıkış yap ya da ana ekrandaki Çıkış yap",
+  "Çıkış yapınca ana ekrana dönülür, başka kullanıcı giriş yapabilir"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_41_windows.pck",
-  "sha256": "b7d2e0fa9cd5f70589a2691a21b4436b84e664a9921c6bfc068628319ec9ae7a",
-  "size": 1199728
+  "file": "paketler/bungalov_42_windows.pck",
+  "sha256": "54420ea4e43351632328039f6224cb527d15b41267f76a6701cd906911d42f2c",
+  "size": 1202128
  },
  "android": {
-  "file": "paketler/bungalov_41_android.pck",
-  "sha256": "b7d2e0fa9cd5f70589a2691a21b4436b84e664a9921c6bfc068628319ec9ae7a",
-  "size": 1199728
+  "file": "paketler/bungalov_42_android.pck",
+  "sha256": "54420ea4e43351632328039f6224cb527d15b41267f76a6701cd906911d42f2c",
+  "size": 1202128
  }
 }
