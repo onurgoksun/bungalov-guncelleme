@@ -1,20 +1,20 @@
 {
- "build": 45,
- "version": "4.5",
+ "build": 46,
+ "version": "4.5.1",
  "notes": [
+  "Açılış ekranında artık bungalov simgesi görünüyor",
   "Karanlık mod: Ayarlar → Görünüm → Karanlık mod",
-  "Sol menüde yeni simgeler",
-  "Yeni uygulama simgesi (bungalov)"
+  "Sol menüde yeni simgeler"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_45_windows.pck",
-  "sha256": "8b50e12dccc7e7e355e85d08f9e09826cc0ea3d2822d119e787b8dfdb97f38d9",
-  "size": 2279600
+  "file": "paketler/bungalov_46_windows.pck",
+  "sha256": "1c4119e35b3c1310e9f965bd2a8f5fd9a91a26d42d16d04c373106c388836d37",
+  "size": 2329184
  },
  "android": {
-  "file": "paketler/bungalov_45_android.pck",
-  "sha256": "8b50e12dccc7e7e355e85d08f9e09826cc0ea3d2822d119e787b8dfdb97f38d9",
-  "size": 2279600
+  "file": "paketler/bungalov_46_android.pck",
+  "sha256": "1c4119e35b3c1310e9f965bd2a8f5fd9a91a26d42d16d04c373106c388836d37",
+  "size": 2329184
  }
 }
