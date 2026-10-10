@@ -1,20 +1,20 @@
 {
- "build": 49,
- "version": "4.5.4",
+ "build": 50,
+ "version": "4.5.5",
  "notes": [
-  "Takvim: her gün ayrı, kenarlı ve tarihli kutu",
-  "Takvim: canlı satır renkleri ve dolu renkli konaklama çubukları",
-  "Karanlık mod ve yeni simgeler"
+  "Takvim: daha canlı renkler (sarı gerçekten sarı)",
+  "Takvim: geçmiş günler çizgili gri — işlem yapılamayacağı belli",
+  "Konaklama çubuklarına beyaz çerçeve"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_49_windows.pck",
-  "sha256": "8db554c2e8023ce9cc6d93370bf686c55f5007eabf8ba1e486e97090bd5f2858",
-  "size": 2331712
+  "file": "paketler/bungalov_50_windows.pck",
+  "sha256": "c1a45a63bc253a4c7e244d316e3a990e1343ac34ae1739cf21b3ff862f2a0444",
+  "size": 2332192
  },
  "android": {
-  "file": "paketler/bungalov_49_android.pck",
-  "sha256": "8db554c2e8023ce9cc6d93370bf686c55f5007eabf8ba1e486e97090bd5f2858",
-  "size": 2331712
+  "file": "paketler/bungalov_50_android.pck",
+  "sha256": "c1a45a63bc253a4c7e244d316e3a990e1343ac34ae1739cf21b3ff862f2a0444",
+  "size": 2332192
  }
 }
