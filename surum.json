@@ -1,19 +1,20 @@
 {
- "build": 52,
- "version": "4.6.1",
+ "build": 53,
+ "version": "4.7",
  "notes": [
-  "Sağ panel: \"Bugün giriş yapanlar\" ve \"Konaklayanlar\" ayrı gösteriliyor",
+  "Bugün gelecek misafirlerin yanında yeşil onay: \"Geldi\" deyince giriş saati kaydedilir",
+  "Giriş saati rezervasyon kartında, misafir geçmişinde ve Misafirlerim listesinde görünür",
   "Ayarlar → Yedek → \"Konaklama aktar\""
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_52_windows.pck",
-  "sha256": "f4c9515d997954eb85687e258d452373f2991f6bc2cc6fb323d93e259b38f00f",
-  "size": 2336784
+  "file": "paketler/bungalov_53_windows.pck",
+  "sha256": "6f6211710f9304e343a2c858e847e2bd0e939731a60e22c6100303ed100f5c16",
+  "size": 2339584
  },
  "android": {
-  "file": "paketler/bungalov_52_android.pck",
-  "sha256": "f4c9515d997954eb85687e258d452373f2991f6bc2cc6fb323d93e259b38f00f",
-  "size": 2336784
+  "file": "paketler/bungalov_53_android.pck",
+  "sha256": "6f6211710f9304e343a2c858e847e2bd0e939731a60e22c6100303ed100f5c16",
+  "size": 2339584
  }
 }
