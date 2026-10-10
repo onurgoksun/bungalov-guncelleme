@@ -1,20 +1,19 @@
 {
- "build": 54,
- "version": "4.8",
+ "build": 55,
+ "version": "4.9",
  "notes": [
-  "Çıkış günü gelen misafir: sağ panelde turuncu isim ve kırmızı onay, takvimde turuncu yanıp sönen isim",
-  "Çıkış panelinde çıkış saati alanı; saat kartta, geçmişte ve Misafirlerim'de görünür",
-  "Bugün gelecekler için yeşil giriş onayı"
+  "Fiyatlar: ay adına tıklayınca fiyat takvimi açılır, aylar takvimin içinden değişir",
+  "Çıkış onayı ve çıkış saati"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_54_windows.pck",
-  "sha256": "9986c3f6f6b66a4737e67c5441aab7516821cb75519a4187227ea2a7ec07a102",
-  "size": 2340912
+  "file": "paketler/bungalov_55_windows.pck",
+  "sha256": "01d8ff4cc18604ff7bfde6e3053e62f94874ad796da42e3fd550b279ce35889c",
+  "size": 2341744
  },
  "android": {
-  "file": "paketler/bungalov_54_android.pck",
-  "sha256": "9986c3f6f6b66a4737e67c5441aab7516821cb75519a4187227ea2a7ec07a102",
-  "size": 2340912
+  "file": "paketler/bungalov_55_android.pck",
+  "sha256": "01d8ff4cc18604ff7bfde6e3053e62f94874ad796da42e3fd550b279ce35889c",
+  "size": 2341744
  }
 }
