@@ -1,19 +1,19 @@
 {
- "build": 51,
- "version": "4.6",
+ "build": 52,
+ "version": "4.6.1",
  "notes": [
-  "Ayarlar → Yedek → \"Konaklama aktar\": eski kayıtları (Excel) dosyadan aktarma",
-  "Takvimde canlı renkler ve çizgili geçmiş günler"
+  "Sağ panel: \"Bugün giriş yapanlar\" ve \"Konaklayanlar\" ayrı gösteriliyor",
+  "Ayarlar → Yedek → \"Konaklama aktar\""
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_51_windows.pck",
-  "sha256": "e10b494a961aef31f09fa7202e3f1828b1929996b69b41d310d200cdfdb2510d",
-  "size": 2336464
+  "file": "paketler/bungalov_52_windows.pck",
+  "sha256": "f4c9515d997954eb85687e258d452373f2991f6bc2cc6fb323d93e259b38f00f",
+  "size": 2336784
  },
  "android": {
-  "file": "paketler/bungalov_51_android.pck",
-  "sha256": "e10b494a961aef31f09fa7202e3f1828b1929996b69b41d310d200cdfdb2510d",
-  "size": 2336464
+  "file": "paketler/bungalov_52_android.pck",
+  "sha256": "f4c9515d997954eb85687e258d452373f2991f6bc2cc6fb323d93e259b38f00f",
+  "size": 2336784
  }
 }
