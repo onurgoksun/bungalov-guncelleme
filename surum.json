@@ -1,19 +1,19 @@
 {
- "build": 55,
- "version": "4.9",
+ "build": 56,
+ "version": "4.9.1",
  "notes": [
-  "Fiyatlar: ay adına tıklayınca fiyat takvimi açılır, aylar takvimin içinden değişir",
-  "Çıkış onayı ve çıkış saati"
+  "iPhone / iPad için tarayıcı sürümü",
+  "Fiyatlar: ay adına tıklayınca fiyat takvimi açılır"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_55_windows.pck",
-  "sha256": "01d8ff4cc18604ff7bfde6e3053e62f94874ad796da42e3fd550b279ce35889c",
-  "size": 2341744
+  "file": "paketler/bungalov_56_windows.pck",
+  "sha256": "6ade34ee617e3e373ca2a384453a91eadd53731ce46a6e9f9dd1e706188e5e16",
+  "size": 2506336
  },
  "android": {
-  "file": "paketler/bungalov_55_android.pck",
-  "sha256": "01d8ff4cc18604ff7bfde6e3053e62f94874ad796da42e3fd550b279ce35889c",
-  "size": 2341744
+  "file": "paketler/bungalov_56_android.pck",
+  "sha256": "6ade34ee617e3e373ca2a384453a91eadd53731ce46a6e9f9dd1e706188e5e16",
+  "size": 2506336
  }
 }
