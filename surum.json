@@ -1,21 +1,19 @@
 {
- "build": 72,
- "version": "4.16",
+ "build": 73,
+ "version": "4.17",
  "notes": [
-  "Telefonda dikey kullanım: alt sekmeler (Takvim, Bugün, Misafirler, Hesap, Diğer)",
-  "Dikey Takvim: hafta şeridi, seçili günün bungalov kartları ve 14 gecelik doluluk şeridi; parmakla kaydırınca gün değişir",
-  "Dikey Bugün: hava, web talepleri, ödeme bekleyenler, gelecekler ve çıkışlar",
-  "Pencereler telefonda alttan açılan tam ekran sayfa oldu"
+  "Telefonda dikey Misafirler: konaklamalar aylara göre kartlar hâlinde, kişiler ve kara liste",
+  "Telefonda dikey Hesap: ayın sonucu, şu an kasada, gelen/giden para, yıl özeti ve gider ekleme"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_72_windows.pck",
-  "sha256": "deefe0ee627ad1667b0363a4443d3992ede51d82769b223aaf6e7d919c6d60ea",
-  "size": 2673424
+  "file": "paketler/bungalov_73_windows.pck",
+  "sha256": "e27093ceff917698376d1c8379358c240104780f39bbd33c3ef2f0ab41974ad0",
+  "size": 2693616
  },
  "android": {
-  "file": "paketler/bungalov_72_android.pck",
-  "sha256": "deefe0ee627ad1667b0363a4443d3992ede51d82769b223aaf6e7d919c6d60ea",
-  "size": 2673424
+  "file": "paketler/bungalov_73_android.pck",
+  "sha256": "e27093ceff917698376d1c8379358c240104780f39bbd33c3ef2f0ab41974ad0",
+  "size": 2693616
  }
 }
