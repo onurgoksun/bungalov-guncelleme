@@ -1,18 +1,18 @@
 {
- "build": 66,
- "version": "4.12.5",
+ "build": 67,
+ "version": "4.12.6",
  "notes": [
-  "Yeni bungalov simgeleri: dolu olan sıcak ışıkla parlar, boş olan soluk, servis dışı gri"
+  "Takvimde bungalov adları yenilendi: renkli rozet, bungalov simgesi, durum noktası ve durum yazısı (Dolu / Boş / Çıkış günü / Servis dışı)"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_66_windows.pck",
-  "sha256": "7d27bcc2cccddffdcfcdab4a226c8ad46bd470baf017bd64ea84ed8a89006a2f",
-  "size": 2506672
+  "file": "paketler/bungalov_67_windows.pck",
+  "sha256": "c7642c6d96fc41b45161b1f1716cce7f6971e6fb7a715ed667d7b918d6dd5ae5",
+  "size": 2507808
  },
  "android": {
-  "file": "paketler/bungalov_66_android.pck",
-  "sha256": "7d27bcc2cccddffdcfcdab4a226c8ad46bd470baf017bd64ea84ed8a89006a2f",
-  "size": 2506672
+  "file": "paketler/bungalov_67_android.pck",
+  "sha256": "c7642c6d96fc41b45161b1f1716cce7f6971e6fb7a715ed667d7b918d6dd5ae5",
+  "size": 2507808
  }
 }
