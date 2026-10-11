@@ -1,20 +1,19 @@
 {
- "build": 61,
- "version": "4.12",
+ "build": 62,
+ "version": "4.12.1",
  "notes": [
-  "Dokunmatik ekran: parmakla sürükleyerek kaydırma her yerde çalışır, kaydırırken hiçbir şey yanlışlıkla açılmaz",
-  "Takvimde parmakla sağa/sola kaydırınca hafta değişir",
-  "Telefonda yazılar ve düğmeler daha büyük; takvim ekrana sığar"
+  "iPhone/iPad: kartların ve düğmelerin üstünden de parmakla kaydırma çalışır",
+  "iPhone/iPad: yazı alanına dokununca klavye açılır"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_61_windows.pck",
-  "sha256": "cf412302de1d3c50dcda19d123d9697fa0ce393b46cca074d6f69598ab4ddc8e",
-  "size": 2519296
+  "file": "paketler/bungalov_62_windows.pck",
+  "sha256": "d0d052375867f62d53d5325cece7ff1cfbe62ee3b1fd5d96501499a35138ca23",
+  "size": 2521568
  },
  "android": {
-  "file": "paketler/bungalov_61_android.pck",
-  "sha256": "cf412302de1d3c50dcda19d123d9697fa0ce393b46cca074d6f69598ab4ddc8e",
-  "size": 2519296
+  "file": "paketler/bungalov_62_android.pck",
+  "sha256": "d0d052375867f62d53d5325cece7ff1cfbe62ee3b1fd5d96501499a35138ca23",
+  "size": 2521568
  }
 }
