@@ -1,19 +1,19 @@
 {
- "build": 62,
- "version": "4.12.1",
+ "build": 63,
+ "version": "4.12.2",
  "notes": [
-  "iPhone/iPad: kartların ve düğmelerin üstünden de parmakla kaydırma çalışır",
-  "iPhone/iPad: yazı alanına dokununca klavye açılır"
+  "Tarayıcı sürümü artık yeni sürümü kendiliğinden yükler (eski sürümde takılı kalmaz)",
+  "iPhone/iPad: kartların üstünden parmakla kaydırma ve klavye düzeltmeleri"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_62_windows.pck",
-  "sha256": "d0d052375867f62d53d5325cece7ff1cfbe62ee3b1fd5d96501499a35138ca23",
-  "size": 2521568
+  "file": "paketler/bungalov_63_windows.pck",
+  "sha256": "faca32a7fe3e4a1bfd449df357ee9223ca784b8e533a50de379c577c94e03244",
+  "size": 2523648
  },
  "android": {
-  "file": "paketler/bungalov_62_android.pck",
-  "sha256": "d0d052375867f62d53d5325cece7ff1cfbe62ee3b1fd5d96501499a35138ca23",
-  "size": 2521568
+  "file": "paketler/bungalov_63_android.pck",
+  "sha256": "faca32a7fe3e4a1bfd449df357ee9223ca784b8e533a50de379c577c94e03244",
+  "size": 2523648
  }
 }
