@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Müsaitlik ve Rezervasyon · Labella Bungalov</title>
+<meta name="description" content="Labella Bungalov Sapanca — müsait günleri görün, rezervasyon talebinizi gönderin.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f6f2ea;
+  --surface: #ffffff;
+  --ink: #1f2a24;
+  --ink2: #5c665f;
+  --ink3: #8d958f;
+  --line: #e4ded2;
+  --forest: #1f4d38;
+  --forest-2: #2c6a4e;
+  --forest-soft: #e3efe7;
+  --free: #2f8a5b;
+  --free-bg: #e6f3eb;
+  --few: #c07a17;
+  --few-bg: #fbf0dc;
+  --full: #b5413a;
+  --full-bg: #f6e3e1;
+  --past: #c9c4b8;
+  --sel: #1f4d38;
+  --shadow: 0 10px 30px rgba(31, 42, 36, .08);
+  --radius: 16px;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font: 15px/1.5 "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+button, input, textarea { font: inherit; color: inherit; }
+h1, h2, h3 { font-family: "Fraunces", Georgia, serif; font-weight: 600; letter-spacing: -.01em; margin: 0; }
+
+/* ---------- üst görsel */
+.hero {
+  position: relative;
+  min-height: 240px;
+  display: flex; align-items: flex-end;
+  background: #2b3a31 url("https://labellabungalov.com/wp-content/uploads/2026/09/labella-bungalov-sapanca-39.webp") center 60% / cover no-repeat;
+  color: #fff;
+}
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.05) 20%, rgba(12,24,17,.72)); }
+.hero .in { position: relative; z-index: 1; width: 100%; max-width: 1040px; margin: 0 auto; padding: 28px 20px 26px; }
+.hero .brand { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; opacity: .9; }
+.hero h1 { font-size: clamp(28px, 5vw, 40px); line-height: 1.1; margin-top: 6px; }
+.hero p { margin: 8px 0 0; opacity: .92; max-width: 560px; }
+body.embed .hero { display: none; }
+
+.wrap { max-width: 1040px; margin: 0 auto; padding: 22px 16px 60px; }
+.grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 20px; align-items: start; }
+@media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
+
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+.card .hd { padding: 18px 20px 6px; display: flex; align-items: center; gap: 10px; }
+.card .hd h2 { font-size: 21px; flex: 1; }
+.card .bd { padding: 8px 20px 20px; }
+
+/* ---------- takvim */
+.nav { display: flex; gap: 6px; }
+.iconbtn {
+  width: 40px; height: 40px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface);
+  display: grid; place-items: center; cursor: pointer; transition: background .15s;
+}
+.iconbtn:hover:not(:disabled) { background: var(--bg); }
+.iconbtn:disabled { opacity: .35; cursor: default; }
+.months { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+@media (max-width: 640px) { .months { grid-template-columns: 1fr; } .months .m2 { display: none; } }
+.month h3 { font-size: 17px; margin: 4px 0 10px; text-align: center; }
+.wd, .days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.wd span { font-size: 11px; font-weight: 600; color: var(--ink3); text-align: center; letter-spacing: .04em; padding-bottom: 4px; }
+.day {
+  position: relative; aspect-ratio: 1 / 1.05; border: 0; border-radius: 10px; cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;
+  background: var(--free-bg); color: var(--ink); font-weight: 600; font-size: 15px; padding: 0;
+  transition: transform .08s, box-shadow .15s;
+}
+.day small { font-size: 9.5px; font-weight: 600; color: var(--free); line-height: 1; }
+.day.few { background: var(--few-bg); }
+.day.few small { color: var(--few); }
+.day.full { background: var(--full-bg); color: #8a6d69; cursor: not-allowed; }
+.day.full small { color: var(--full); }
+.day.full.co-ok { cursor: pointer; }
+.day.past, .day.out { background: transparent; color: var(--past); cursor: default; font-weight: 500; }
+.day.past small, .day.out small { display: none; }
+.day.blank { visibility: hidden; }
+.day.today::before { content: ""; position: absolute; top: 5px; right: 6px; width: 6px; height: 6px; border-radius: 50%; background: var(--forest); }
+.day:not(.past):not(.blank):not(.out):hover { box-shadow: inset 0 0 0 2px var(--forest-2); }
+.day.full:not(.co-ok):hover { box-shadow: none; }
+.day.inr { background: var(--forest-soft); color: var(--forest); }
+.day.inr small { color: var(--forest-2); }
+.day.ci, .day.co { background: var(--sel); color: #fff; }
+.day.ci small, .day.co small { color: #d6eadf; }
+.legend { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 16px; font-size: 12.5px; color: var(--ink2); }
+.legend i { display: inline-block; width: 12px; height: 12px; border-radius: 4px; margin-right: 6px; vertical-align: -1px; }
+.hint { margin-top: 12px; font-size: 13px; color: var(--ink2); background: var(--bg); border-radius: 10px; padding: 10px 12px; }
+
+/* ---------- form */
+.sum { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.sum .box { border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; cursor: pointer; background: var(--surface); text-align: left; }
+.sum .box label { display: block; font-size: 11px; font-weight: 600; letter-spacing: .06em; color: var(--ink3); text-transform: uppercase; }
+.sum .box b { font-weight: 600; font-size: 15px; }
+.sum .box.on { border-color: var(--forest); box-shadow: 0 0 0 2px var(--forest-soft); }
+.nights { margin: 10px 0 2px; font-size: 13px; color: var(--ink2); min-height: 20px; }
+.row { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.row .t { font-weight: 500; }
+.row .s { font-size: 12px; color: var(--ink3); }
+.step { display: flex; align-items: center; gap: 4px; }
+.step button { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface); font-size: 18px; cursor: pointer; line-height: 1; }
+.step button:disabled { opacity: .35; cursor: default; }
+.step span { min-width: 34px; text-align: center; font-weight: 600; }
+.f { margin-top: 14px; }
+.f label { display: block; font-size: 13px; font-weight: 500; color: var(--ink2); margin-bottom: 6px; }
+.f input, .f textarea {
+  width: 100%; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; background: #fff; font-size: 16px; outline: none;
+  transition: border-color .15s, box-shadow .15s;
+}
+.f textarea { min-height: 76px; resize: vertical; }
+.f input:focus, .f textarea:focus { border-color: var(--forest-2); box-shadow: 0 0 0 3px var(--forest-soft); }
+.kvkk { display: flex; gap: 10px; align-items: flex-start; margin-top: 14px; font-size: 13px; color: var(--ink2); }
+.kvkk input { width: 18px; height: 18px; margin-top: 2px; accent-color: var(--forest); }
+.kvkk a { color: var(--forest); }
+.primary {
+  width: 100%; margin-top: 16px; border: 0; border-radius: 14px; padding: 15px 18px; background: var(--forest); color: #fff;
+  font-weight: 600; font-size: 16px; cursor: pointer; transition: background .15s, transform .08s;
+}
+.primary:hover:not(:disabled) { background: var(--forest-2); }
+.primary:active:not(:disabled) { transform: scale(.99); }
+.primary:disabled { opacity: .45; cursor: default; }
+.err { margin-top: 12px; color: var(--full); font-size: 14px; font-weight: 500; min-height: 0; }
+.note { margin-top: 12px; font-size: 12.5px; color: var(--ink3); text-align: center; }
+.wa { display: inline-flex; align-items: center; gap: 8px; color: var(--forest); font-weight: 600; text-decoration: none; }
+
+/* ---------- durumlar */
+.state { padding: 40px 24px; text-align: center; }
+.state h2 { font-size: 24px; margin-bottom: 8px; }
+.state p { color: var(--ink2); margin: 6px auto; max-width: 420px; }
+.ok-ic { width: 64px; height: 64px; border-radius: 50%; background: var(--free-bg); color: var(--free); display: grid; place-items: center; margin: 0 auto 16px; }
+.skel { height: 300px; border-radius: 12px; background: linear-gradient(90deg, #f1ece2 25%, #f8f5ef 50%, #f1ece2 75%); background-size: 200% 100%; animation: sk 1.2s infinite; }
+@keyframes sk { to { background-position: -200% 0; } }
+.foot { text-align: center; color: var(--ink3); font-size: 12.5px; margin-top: 26px; }
+.foot a { color: var(--ink2); }
+.hidden { display: none !important; }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="in">
+    <div class="brand">Labella Bungalov · Sapanca</div>
+    <h1>Müsaitlik ve rezervasyon</h1>
+    <p>Boş günleri takvimden görün, tarihlerinizi seçin ve talebinizi gönderin. En kısa sürede sizi arayıp rezervasyonunuzu kesinleştiriyoruz.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div id="closed" class="card state hidden">
+    <h2>Online talep şu an kapalı</h2>
+    <p>Müsaitlik ve rezervasyon için bize WhatsApp'tan ya da telefonla ulaşabilirsiniz.</p>
+    <p><a class="wa" href="https://wa.me/905327222545" target="_blank" rel="noopener">WhatsApp: 0532 722 25 45</a></p>
+  </div>
+
+  <div id="app" class="grid">
+    <section class="card" aria-label="Doluluk takvimi">
+      <div class="hd">
+        <h2>Doluluk takvimi</h2>
+        <div class="nav">
+          <button class="iconbtn" id="prev" aria-label="Önceki ay"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <button class="iconbtn" id="next" aria-label="Sonraki ay"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+        </div>
+      </div>
+      <div class="bd">
+        <div id="cal" class="months"><div class="skel"></div></div>
+        <div class="legend">
+          <span><i style="background:var(--free-bg);box-shadow:inset 0 0 0 1px #bfdcc9"></i>Müsait</span>
+          <span><i style="background:var(--few-bg);box-shadow:inset 0 0 0 1px #ecd2a5"></i>Son bungalovlar</span>
+          <span><i style="background:var(--full-bg);box-shadow:inset 0 0 0 1px #e6c1bd"></i>Dolu</span>
+          <span><i style="background:var(--sel)"></i>Seçiminiz</span>
+        </div>
+        <div class="hint" id="hint">Önce <b>giriş</b>, sonra <b>çıkış</b> gününe dokunun. Sayılar o gece boş kalan bungalov sayısıdır.</div>
+      </div>
+    </section>
+
+    <section class="card" aria-label="Rezervasyon talebi">
+      <div class="hd"><h2>Rezervasyon talebi</h2></div>
+      <div class="bd">
+        <div id="form">
+          <div class="sum">
+            <button type="button" class="box on" id="ciBox"><label>Giriş</label><b id="ciTxt">Tarih seçin</b></button>
+            <button type="button" class="box" id="coBox"><label>Çıkış</label><b id="coTxt">—</b></button>
+          </div>
+          <div class="nights" id="nights"></div>
+          <div class="row">
+            <div><div class="t">Kişi sayısı</div><div class="s">Bir bungalov 4+1 kişiliktir</div></div>
+            <div class="step"><button type="button" id="gMinus" aria-label="Azalt">−</button><span id="gVal">2</span><button type="button" id="gPlus" aria-label="Artır">+</button></div>
+          </div>
+          <div class="row">
+            <div><div class="t">Bungalov sayısı</div><div class="s" id="uHint">Seçtiğiniz tarihlerde boş olan</div></div>
+            <div class="step"><button type="button" id="uMinus" aria-label="Azalt">−</button><span id="uVal">1</span><button type="button" id="uPlus" aria-label="Artır">+</button></div>
+          </div>
+          <div class="f"><label for="name">Ad soyad</label><input id="name" autocomplete="name" maxlength="80" placeholder="Adınız ve soyadınız"></div>
+          <div class="f"><label for="phone">Telefon</label><input id="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="05xx xxx xx xx"></div>
+          <div class="f"><label for="note">Not <span style="color:var(--ink3);font-weight:400">(isteğe bağlı)</span></label><textarea id="note" maxlength="500" placeholder="Örn. evcil hayvanımız var, geç giriş yapacağız…"></textarea></div>
+          <label class="kvkk"><input type="checkbox" id="kvkk"><span>Bilgilerimin rezervasyon talebim için kullanılmasını kabul ediyorum. <a href="https://labellabungalov.com/kvkk-aydinlatma-metni/" target="_blank" rel="noopener">KVKK Aydınlatma Metni</a></span></label>
+          <button class="primary" id="send" disabled>Talebi gönder</button>
+          <div class="err" id="err" role="alert"></div>
+          <div class="note">Bu bir talep formudur; rezervasyonunuz sizinle iletişime geçtiğimizde kesinleşir.</div>
+        </div>
+        <div id="done" class="state hidden">
+          <div class="ok-ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+          <h2>Talebiniz alındı</h2>
+          <p id="doneTxt"></p>
+          <p>En kısa sürede sizi arayacağız ya da WhatsApp'tan yazacağız.</p>
+          <p style="margin-top:18px"><a class="wa" href="https://wa.me/905327222545" target="_blank" rel="noopener">Acil durumda WhatsApp: 0532 722 25 45</a></p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="foot">Labella Bungalov · Memnuniye Mah. Memnuniye Sok. No 132, Sapanca / Sakarya · <a href="https://labellabungalov.com/">labellabungalov.com</a></div>
+</main>
+
+<script>
+(function () {
+  "use strict";
+  var Q = new URLSearchParams(location.search);
+  var LOCAL = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+  var API = (LOCAL && Q.get("api")) || "https://sbqjblbiwivytybtlxdi.supabase.co";
+  var KEY = (LOCAL && Q.get("key")) || "sb_publishable_YeZQ1VWS7RrQMxW5Ubrykg_7q_k0N9A";
+  var SLUG = (Q.get("t") || "labella").toLowerCase().replace(/[^a-z0-9-]/g, "");
+  var DAYS = 400;
+  var AYLAR = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"];
+  var GUN = ["Pzt", "Sal", "Çar", "Per", "Cum", "Cmt", "Paz"];
+  var GUN_UZUN = ["Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi", "Pazar"];
+  if (Q.get("embed") === "1" || window.self !== window.top) document.body.classList.add("embed");
+
+  var $ = function (id) { return document.getElementById(id); };
+  var S = { free: {}, total: 5, today: null, first: null, view: null, ci: null, co: null, guests: 2, units: 1, sending: false };
+
+  // ---- tarih yardımcıları (yerel saat, "YYYY-MM-DD")
+  function ymd(d) { return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); }
+  function parse(s) { var p = s.split("-"); return new Date(+p[0], +p[1] - 1, +p[2]); }
+  function add(s, n) { var d = parse(s); d.setDate(d.getDate() + n); return ymd(d); }
+  function diff(a, b) { return Math.round((parse(b) - parse(a)) / 86400000); }
+  function wd(s) { return (parse(s).getDay() + 6) % 7; }
+  function pretty(s) { var d = parse(s); return d.getDate() + " " + AYLAR[d.getMonth()] + " " + GUN_UZUN[wd(s)]; }
+  function short(s) { var d = parse(s); return d.getDate() + " " + AYLAR[d.getMonth()].slice(0, 3); }
+
+  function rpc(fn, body) {
+    return fetch(API + "/rest/v1/rpc/" + fn, {
+      method: "POST", cache: "no-store",
+      headers: { "apikey": KEY, "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify(body)
+    }).then(function (r) {
+      return r.text().then(function (t) {
+        var j = null; try { j = t ? JSON.parse(t) : null; } catch (e) {}
+        if (!r.ok) throw new Error((j && (j.message || j.msg)) || "Sunucuya ulaşılamadı");
+        return j;
+      });
+    });
+  }
+
+  // ---- doluluk
+  function load() {
+    return rpc("public_availability", { p_slug: SLUG, p_from: null, p_days: DAYS }).then(function (r) {
+      S.total = r.total || 0;
+      S.today = r.today;
+      S.free = {};
+      (r.days || []).forEach(function (x) { S.free[x.d] = x.free; });
+      if (!S.view) S.view = S.today.slice(0, 8) + "01";
+      S.first = S.today;
+      draw();
+    });
+  }
+  function freeOn(d) { return Object.prototype.hasOwnProperty.call(S.free, d) ? S.free[d] : null; }
+  // [ci, co) gecelerinin en az kaç bungalovu boş?
+  function minFree(ci, co) {
+    var m = 99, d = ci;
+    while (d < co) { var f = freeOn(d); if (f === null) return 0; m = Math.min(m, f); d = add(d, 1); }
+    return m;
+  }
+
+  function monthEl(first) {
+    var d0 = parse(first), y = d0.getFullYear(), m = d0.getMonth();
+    var el = document.createElement("div"); el.className = "month";
+    el.innerHTML = "<h3>" + AYLAR[m] + " " + y + "</h3>";
+    var w = document.createElement("div"); w.className = "wd";
+    GUN.forEach(function (g) { var s = document.createElement("span"); s.textContent = g; w.appendChild(s); });
+    el.appendChild(w);
+    var g = document.createElement("div"); g.className = "days";
+    var lead = wd(first);
+    for (var i = 0; i < lead; i++) { var b = document.createElement("div"); b.className = "day blank"; g.appendChild(b); }
+    var dim = new Date(y, m + 1, 0).getDate();
+    for (var dd = 1; dd <= dim; dd++) {
+      var ds = ymd(new Date(y, m, dd));
+      var bt = document.createElement("button"); bt.type = "button"; bt.className = "day"; bt.dataset.d = ds;
+      var f = freeOn(ds);
+      var lbl = "";
+      if (ds < S.today) { bt.classList.add("past"); bt.disabled = true; }
+      else if (f === null) { bt.classList.add("out"); bt.disabled = true; }
+      else if (f <= 0) { bt.classList.add("full"); lbl = "dolu"; }
+      else { if (f === 1 && S.total > 1) bt.classList.add("few"); lbl = f + " boş"; }
+      if (ds === S.today) bt.classList.add("today");
+      // seçim
+      if (S.ci && ds === S.ci) bt.classList.add("ci");
+      else if (S.co && ds === S.co) bt.classList.add("co");
+      else if (S.ci && S.co && ds > S.ci && ds < S.co) bt.classList.add("inr");
+      // çıkış seçerken: dolu gün çıkış günü olabilir (o gece kalınmaz)
+      if (S.ci && !S.co && f !== null && f <= 0 && ds > S.ci && minFree(S.ci, ds) >= S.units) bt.classList.add("co-ok");
+      bt.innerHTML = dd + (lbl ? "<small>" + lbl + "</small>" : "");
+      bt.setAttribute("aria-label", pretty(ds) + (lbl ? ", " + lbl : ""));
+      g.appendChild(bt);
+    }
+    el.appendChild(g);
+    return el;
+  }
+
+  function draw() {
+    var cal = $("cal");
+    cal.innerHTML = "";
+    var m1 = monthEl(S.view);
+    var nd = parse(S.view); nd.setMonth(nd.getMonth() + 1);
+    var m2 = monthEl(ymd(nd)); m2.classList.add("m2");
+    cal.appendChild(m1); cal.appendChild(m2);
+    $("prev").disabled = S.view <= S.today.slice(0, 8) + "01";
+    var last = add(S.today, DAYS - 1);
+    $("next").disabled = ymd(nd) > last;
+    drawForm();
+    postHeight();
+  }
+
+  function pick(ds) {
+    var f = freeOn(ds);
+    $("err").textContent = "";
+    if (!S.ci || S.co || ds <= S.ci) {
+      // yeni giriş günü
+      if (f === null || f <= 0) { flash(ds + "|full"); return; }
+      S.ci = ds; S.co = null;
+    } else {
+      var n = diff(S.ci, ds);
+      if (n > 30) { $("err").textContent = "En fazla 30 gece seçilebilir."; return; }
+      var mf = minFree(S.ci, ds);
+      if (mf <= 0) {
+        // arada dolu gece var: bu günü yeni giriş günü yap
+        if (f !== null && f > 0) { S.ci = ds; S.co = null; }
+        else { $("err").textContent = "Seçtiğiniz aralıkta dolu geceler var. Başka bir tarih deneyin."; return; }
+      } else {
+        S.co = ds;
+        if (S.units > mf) S.units = mf;
+      }
+    }
+    draw();
+  }
+  function flash(k) {
+    $("err").textContent = "Bu gece bütün bungalovlar dolu. Lütfen başka bir gün seçin.";
+  }
+
+  function drawForm() {
+    $("ciTxt").textContent = S.ci ? pretty(S.ci) : "Tarih seçin";
+    $("coTxt").textContent = S.co ? pretty(S.co) : (S.ci ? "Çıkış gününü seçin" : "—");
+    $("ciBox").classList.toggle("on", !S.ci);
+    $("coBox").classList.toggle("on", !!S.ci && !S.co);
+    var mf = S.ci && S.co ? minFree(S.ci, S.co) : (S.ci ? freeOn(S.ci) : S.total);
+    var n = S.ci && S.co ? diff(S.ci, S.co) : 0;
+    $("nights").textContent = n ? (n + " gece · " + short(S.ci) + " – " + short(S.co) + (mf ? " · bu tarihlerde " + mf + " bungalov boş" : "")) : "";
+    var maxU = Math.max(1, mf || 1);
+    if (S.units > maxU) S.units = maxU;
+    $("uVal").textContent = S.units;
+    $("gVal").textContent = S.guests;
+    $("uMinus").disabled = S.units <= 1;
+    $("uPlus").disabled = S.units >= maxU;
+    $("gMinus").disabled = S.guests <= 1;
+    $("gPlus").disabled = S.guests >= S.units * 5;
+    $("uHint").textContent = S.ci && S.co ? ("En fazla " + maxU + " · seçtiğiniz tarihlerde boş olan") : "Seçtiğiniz tarihlerde boş olan";
+    if (S.guests > S.units * 5) { S.guests = S.units * 5; $("gVal").textContent = S.guests; }
+    var ready = S.ci && S.co && $("name").value.trim().length >= 3 && $("phone").value.replace(/\D/g, "").length >= 10 && $("kvkk").checked && !S.sending;
+    $("send").disabled = !ready;
+    $("hint").innerHTML = !S.ci ? "Önce <b>giriş</b>, sonra <b>çıkış</b> gününe dokunun. Sayılar o gece boş kalan bungalov sayısıdır."
+      : !S.co ? "Şimdi <b>çıkış</b> gününe dokunun. Çıkış günü dolu görünse de seçilebilir (o gece kalmazsınız)."
+      : "Tarihleri değiştirmek için takvimde yeni bir giriş gününe dokunun.";
+  }
+
+  function send() {
+    if (S.sending) return;
+    S.sending = true; drawForm();
+    $("send").textContent = "Gönderiliyor…";
+    $("err").textContent = "";
+    rpc("submit_booking_request", {
+      p_slug: SLUG, p_ci: S.ci, p_co: S.co, p_guests: S.guests, p_units: S.units,
+      p_name: $("name").value.trim(), p_phone: $("phone").value.trim(), p_note: $("note").value.trim()
+    }).then(function () {
+      $("form").classList.add("hidden");
+      $("done").classList.remove("hidden");
+      $("doneTxt").textContent = pretty(S.ci) + " – " + pretty(S.co) + " · " + diff(S.ci, S.co) + " gece · " + S.guests + " kişi" + (S.units > 1 ? " · " + S.units + " bungalov" : "");
+      postHeight();
+      try { window.parent && window.parent.postMessage({ labella: "talep-gonderildi" }, "*"); } catch (e) {}
+    }).catch(function (e) {
+      $("err").textContent = e.message || "Talep gönderilemedi. Lütfen tekrar deneyin.";
+      load().catch(function () {});
+    }).then(function () {
+      S.sending = false; $("send").textContent = "Talebi gönder"; drawForm();
+    });
+  }
+
+  // iframe içinde yüksekliği bildir (WordPress sayfasına gömülünce kaydırma çubuğu çıkmasın)
+  function postHeight() {
+    if (window.self === window.top) return;
+    try { window.parent.postMessage({ labella: "yukseklik", h: document.documentElement.scrollHeight }, "*"); } catch (e) {}
+  }
+  window.addEventListener("resize", postHeight);
+
+  // ---- olaylar
+  $("cal").addEventListener("click", function (e) {
+    var b = e.target.closest(".day"); if (!b || b.disabled || !b.dataset.d) return;
+    pick(b.dataset.d);
+  });
+  $("prev").onclick = function () { var d = parse(S.view); d.setMonth(d.getMonth() - 1); S.view = ymd(d); draw(); };
+  $("next").onclick = function () { var d = parse(S.view); d.setMonth(d.getMonth() + 1); S.view = ymd(d); draw(); };
+  $("ciBox").onclick = function () { S.ci = null; S.co = null; draw(); };
+  $("coBox").onclick = function () { if (S.ci) { S.co = null; draw(); } };
+  $("gMinus").onclick = function () { S.guests = Math.max(1, S.guests - 1); drawForm(); };
+  $("gPlus").onclick = function () { S.guests = Math.min(S.units * 5, S.guests + 1); drawForm(); };
+  $("uMinus").onclick = function () { S.units = Math.max(1, S.units - 1); draw(); };
+  $("uPlus").onclick = function () { S.units++; draw(); };
+  ["name", "phone", "note"].forEach(function (id) { $(id).addEventListener("input", drawForm); });
+  $("kvkk").addEventListener("change", drawForm);
+  $("send").onclick = send;
+
+  load().catch(function (e) {
+    if (/kapalı/i.test(e.message || "")) {
+      $("app").classList.add("hidden");
+      $("closed").classList.remove("hidden");
+    } else {
+      $("cal").innerHTML = '<div class="hint">Doluluk bilgisi şu an alınamadı. Lütfen sayfayı yenileyin ya da bize WhatsApp\'tan yazın: <a class="wa" href="https://wa.me/905327222545">0532 722 25 45</a></div>';
+    }
+    postHeight();
+  });
+  // açık kalırsa doluluk dakikada bir tazelenir
+  setInterval(function () { if (!S.sending && document.visibilityState === "visible") load().catch(function () {}); }, 60000);
+})();
+</script>
+</body>
+</html>
