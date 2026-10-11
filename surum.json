@@ -1,18 +1,18 @@
 {
- "build": 77,
- "version": "4.21",
+ "build": 78,
+ "version": "4.22",
  "notes": [
-  "Çakışma uyarısı artık çakışan rezervasyon silinince ya da iptal edilince hemen kalkar (eskiden bir sonraki Airbnb eşitlemesini beklerdi)"
+  "Airbnb bağlanmadan önce elle girilen aynı misafir artık Airbnb kaydıyla otomatik birleşir: çakışma ve yanlış ödeme bekleniyor uyarısı çıkmaz"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_77_windows.pck",
-  "sha256": "9be79464589ad936f0f4e74bbb392e79e3a27e603ca56260dc3eef2e364e36f7",
-  "size": 2705840
+  "file": "paketler/bungalov_78_windows.pck",
+  "sha256": "317c8dcc81579fc2e2019708acd6d4bb1eb43cdd2089acfad4fbe2917c9ff9e0",
+  "size": 2707360
  },
  "android": {
-  "file": "paketler/bungalov_77_android.pck",
-  "sha256": "9be79464589ad936f0f4e74bbb392e79e3a27e603ca56260dc3eef2e364e36f7",
-  "size": 2705840
+  "file": "paketler/bungalov_78_android.pck",
+  "sha256": "317c8dcc81579fc2e2019708acd6d4bb1eb43cdd2089acfad4fbe2917c9ff9e0",
+  "size": 2707360
  }
 }
