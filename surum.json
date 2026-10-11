@@ -1,19 +1,20 @@
 {
- "build": 73,
- "version": "4.17",
+ "build": 74,
+ "version": "4.18",
  "notes": [
-  "Telefonda dikey Misafirler: konaklamalar aylara göre kartlar hâlinde, kişiler ve kara liste",
-  "Telefonda dikey Hesap: ayın sonucu, şu an kasada, gelen/giden para, yıl özeti ve gider ekleme"
+  "Telefonda dikey Fiyatlar, Piyasa, Ayarlar ve Yönetim: Diğer sekmesinden tam ekran açılır",
+  "Piyasa fiyat tablosu dikeyde 5 gece, her rakip kendi satırında",
+  "Telefon artık bütün bölümlerde dik de kullanılabilir"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_73_windows.pck",
-  "sha256": "e27093ceff917698376d1c8379358c240104780f39bbd33c3ef2f0ab41974ad0",
-  "size": 2693616
+  "file": "paketler/bungalov_74_windows.pck",
+  "sha256": "ad572983c236305a605c3c64bf9824730bd6c06de45900e4fae5074f3fc11fc9",
+  "size": 2705472
  },
  "android": {
-  "file": "paketler/bungalov_73_android.pck",
-  "sha256": "e27093ceff917698376d1c8379358c240104780f39bbd33c3ef2f0ab41974ad0",
-  "size": 2693616
+  "file": "paketler/bungalov_74_android.pck",
+  "sha256": "ad572983c236305a605c3c64bf9824730bd6c06de45900e4fae5074f3fc11fc9",
+  "size": 2705472
  }
 }
