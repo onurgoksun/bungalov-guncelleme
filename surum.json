@@ -1,23 +1,20 @@
 {
- "build": 70,
- "version": "4.14",
+ "build": 71,
+ "version": "4.15",
  "notes": [
-  "Takvimin üstünde hava durumu şeridi (bungalov kartları kaldırıldı, doluluk yüzdesi sol sütunda)",
-  "Gün özeti: takvimde güne dokununca kim geliyor/çıkıyor, hava, özel gün ve fiyat",
-  "Servis dışı bungalova dokununca 'Servise aç'",
-  "WhatsApp ile misafire hazır mesaj (hatırlatma, ödeme, teşekkür) ve yarın gelecekler için ödeme hatırlatma",
-  "Yeni Piyasa sayfası: rakip fiyat tablosu, hızlı tarih, tek ekranda fiyat girişi, fiyat önerisi",
-  "Hesap sayfasında 'şu an kasada' ayrı gösteriliyor; giriş ekranı tek kart"
+  "Web sitesinden rezervasyon talebi: talepler Takvim sayfasında 'Web sitesi talepleri' olarak düşer, onaylayınca rezervasyon oluşur",
+  "Ayarlar → Web sitesinden rezervasyon: talep almayı açma/kapama, sayfa linki, geçmiş talepler",
+  "WhatsApp'ta yeni 'Onay' mesajı"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_70_windows.pck",
-  "sha256": "74738884bc8b9e3d216af4c7cd252c68d5b9eb0539c604fd1b510f0bcc8b7cff",
-  "size": 2627408
+  "file": "paketler/bungalov_71_windows.pck",
+  "sha256": "763601c37e75f0e86483b6c723c047dd0356055f4b87d976f24cc84209dc8cf9",
+  "size": 2641664
  },
  "android": {
-  "file": "paketler/bungalov_70_android.pck",
-  "sha256": "74738884bc8b9e3d216af4c7cd252c68d5b9eb0539c604fd1b510f0bcc8b7cff",
-  "size": 2627408
+  "file": "paketler/bungalov_71_android.pck",
+  "sha256": "763601c37e75f0e86483b6c723c047dd0356055f4b87d976f24cc84209dc8cf9",
+  "size": 2641664
  }
 }
