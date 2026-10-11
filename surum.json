@@ -1,20 +1,21 @@
 {
- "build": 71,
- "version": "4.15",
+ "build": 72,
+ "version": "4.16",
  "notes": [
-  "Web sitesinden rezervasyon talebi: talepler Takvim sayfasında 'Web sitesi talepleri' olarak düşer, onaylayınca rezervasyon oluşur",
-  "Ayarlar → Web sitesinden rezervasyon: talep almayı açma/kapama, sayfa linki, geçmiş talepler",
-  "WhatsApp'ta yeni 'Onay' mesajı"
+  "Telefonda dikey kullanım: alt sekmeler (Takvim, Bugün, Misafirler, Hesap, Diğer)",
+  "Dikey Takvim: hafta şeridi, seçili günün bungalov kartları ve 14 gecelik doluluk şeridi; parmakla kaydırınca gün değişir",
+  "Dikey Bugün: hava, web talepleri, ödeme bekleyenler, gelecekler ve çıkışlar",
+  "Pencereler telefonda alttan açılan tam ekran sayfa oldu"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_71_windows.pck",
-  "sha256": "763601c37e75f0e86483b6c723c047dd0356055f4b87d976f24cc84209dc8cf9",
-  "size": 2641664
+  "file": "paketler/bungalov_72_windows.pck",
+  "sha256": "deefe0ee627ad1667b0363a4443d3992ede51d82769b223aaf6e7d919c6d60ea",
+  "size": 2673424
  },
  "android": {
-  "file": "paketler/bungalov_71_android.pck",
-  "sha256": "763601c37e75f0e86483b6c723c047dd0356055f4b87d976f24cc84209dc8cf9",
-  "size": 2641664
+  "file": "paketler/bungalov_72_android.pck",
+  "sha256": "deefe0ee627ad1667b0363a4443d3992ede51d82769b223aaf6e7d919c6d60ea",
+  "size": 2673424
  }
 }
