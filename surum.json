@@ -1,19 +1,18 @@
 {
- "build": 63,
- "version": "4.12.2",
+ "build": 64,
+ "version": "4.12.3",
  "notes": [
-  "Tarayıcı sürümü artık yeni sürümü kendiliğinden yükler (eski sürümde takılı kalmaz)",
-  "iPhone/iPad: kartların üstünden parmakla kaydırma ve klavye düzeltmeleri"
+  "Takvimi parmakla sağa/sola sürükleyince tarihler gün gün kayar; hızlı kaydırıp bırakınca birkaç gün daha ilerler"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_63_windows.pck",
-  "sha256": "faca32a7fe3e4a1bfd449df357ee9223ca784b8e533a50de379c577c94e03244",
-  "size": 2523648
+  "file": "paketler/bungalov_64_windows.pck",
+  "sha256": "7672fb99a94bbb1b9c5bd51612c548877b35d58e7095c26df173606554bbddd3",
+  "size": 2472480
  },
  "android": {
-  "file": "paketler/bungalov_63_android.pck",
-  "sha256": "faca32a7fe3e4a1bfd449df357ee9223ca784b8e533a50de379c577c94e03244",
-  "size": 2523648
+  "file": "paketler/bungalov_64_android.pck",
+  "sha256": "7672fb99a94bbb1b9c5bd51612c548877b35d58e7095c26df173606554bbddd3",
+  "size": 2472480
  }
 }
