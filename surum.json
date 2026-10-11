@@ -1,18 +1,23 @@
 {
- "build": 69,
- "version": "4.13.1",
+ "build": 70,
+ "version": "4.14",
  "notes": [
-  "Bugün panelindeki 'Dolu bungalov' sayısı düzeltildi"
+  "Takvimin üstünde hava durumu şeridi (bungalov kartları kaldırıldı, doluluk yüzdesi sol sütunda)",
+  "Gün özeti: takvimde güne dokununca kim geliyor/çıkıyor, hava, özel gün ve fiyat",
+  "Servis dışı bungalova dokununca 'Servise aç'",
+  "WhatsApp ile misafire hazır mesaj (hatırlatma, ödeme, teşekkür) ve yarın gelecekler için ödeme hatırlatma",
+  "Yeni Piyasa sayfası: rakip fiyat tablosu, hızlı tarih, tek ekranda fiyat girişi, fiyat önerisi",
+  "Hesap sayfasında 'şu an kasada' ayrı gösteriliyor; giriş ekranı tek kart"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_69_windows.pck",
-  "sha256": "58ab3cb21fc81de28e3ccc7e09e797cc2625ffd0f6085c407b857b02773769d6",
-  "size": 2602768
+  "file": "paketler/bungalov_70_windows.pck",
+  "sha256": "74738884bc8b9e3d216af4c7cd252c68d5b9eb0539c604fd1b510f0bcc8b7cff",
+  "size": 2627408
  },
  "android": {
-  "file": "paketler/bungalov_69_android.pck",
-  "sha256": "58ab3cb21fc81de28e3ccc7e09e797cc2625ffd0f6085c407b857b02773769d6",
-  "size": 2602768
+  "file": "paketler/bungalov_70_android.pck",
+  "sha256": "74738884bc8b9e3d216af4c7cd252c68d5b9eb0539c604fd1b510f0bcc8b7cff",
+  "size": 2627408
  }
 }
