@@ -1,20 +1,18 @@
 {
- "build": 68,
- "version": "4.13",
+ "build": 69,
+ "version": "4.13.1",
  "notes": [
-  "Hava durumu asistanı (Sapanca): takvimde her günün altında hava simgesi ve sıcaklık",
-  "Bugün panelinde anlık hava ve uyarılar: kuvvetli yağış, ayaz, rüzgâr, güneşli hafta sonu fırsatı",
-  "Rezervasyon kartında konaklama günlerinin hava tahmini"
+  "Bugün panelindeki 'Dolu bungalov' sayısı düzeltildi"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_68_windows.pck",
-  "sha256": "54c14af80e207c6df9148abfdbf9b9c0efc8c64ac49efddd917116c6b1ee04a5",
-  "size": 2602896
+  "file": "paketler/bungalov_69_windows.pck",
+  "sha256": "58ab3cb21fc81de28e3ccc7e09e797cc2625ffd0f6085c407b857b02773769d6",
+  "size": 2602768
  },
  "android": {
-  "file": "paketler/bungalov_68_android.pck",
-  "sha256": "54c14af80e207c6df9148abfdbf9b9c0efc8c64ac49efddd917116c6b1ee04a5",
-  "size": 2602896
+  "file": "paketler/bungalov_69_android.pck",
+  "sha256": "58ab3cb21fc81de28e3ccc7e09e797cc2625ffd0f6085c407b857b02773769d6",
+  "size": 2602768
  }
 }
