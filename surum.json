@@ -1,18 +1,18 @@
 {
- "build": 65,
- "version": "4.12.4",
+ "build": 66,
+ "version": "4.12.5",
  "notes": [
-  "Takvim parmakla kaydırılırken pürüzsüz akar; bırakınca yavaşlayıp en yakın güne yumuşakça oturur"
+  "Yeni bungalov simgeleri: dolu olan sıcak ışıkla parlar, boş olan soluk, servis dışı gri"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_65_windows.pck",
-  "sha256": "722a7989d60a30f88b12176476e254929a04342f7326581b023b26cf783ce3b6",
-  "size": 2473120
+  "file": "paketler/bungalov_66_windows.pck",
+  "sha256": "7d27bcc2cccddffdcfcdab4a226c8ad46bd470baf017bd64ea84ed8a89006a2f",
+  "size": 2506672
  },
  "android": {
-  "file": "paketler/bungalov_65_android.pck",
-  "sha256": "722a7989d60a30f88b12176476e254929a04342f7326581b023b26cf783ce3b6",
-  "size": 2473120
+  "file": "paketler/bungalov_66_android.pck",
+  "sha256": "7d27bcc2cccddffdcfcdab4a226c8ad46bd470baf017bd64ea84ed8a89006a2f",
+  "size": 2506672
  }
 }
