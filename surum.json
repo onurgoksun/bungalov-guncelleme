@@ -1,18 +1,18 @@
 {
- "build": 76,
- "version": "4.20",
+ "build": 77,
+ "version": "4.21",
  "notes": [
-  "iPad web sürümünde ekranın altındaki boşluk giderildi"
+  "Çakışma uyarısı artık çakışan rezervasyon silinince ya da iptal edilince hemen kalkar (eskiden bir sonraki Airbnb eşitlemesini beklerdi)"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_76_windows.pck",
-  "sha256": "8753ef5f5da993d8435377af0a362941e462a16f7dfa65c64a090082850160f8",
-  "size": 2705552
+  "file": "paketler/bungalov_77_windows.pck",
+  "sha256": "9be79464589ad936f0f4e74bbb392e79e3a27e603ca56260dc3eef2e364e36f7",
+  "size": 2705840
  },
  "android": {
-  "file": "paketler/bungalov_76_android.pck",
-  "sha256": "8753ef5f5da993d8435377af0a362941e462a16f7dfa65c64a090082850160f8",
-  "size": 2705552
+  "file": "paketler/bungalov_77_android.pck",
+  "sha256": "9be79464589ad936f0f4e74bbb392e79e3a27e603ca56260dc3eef2e364e36f7",
+  "size": 2705840
  }
 }
