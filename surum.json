@@ -1,18 +1,18 @@
 {
- "build": 64,
- "version": "4.12.3",
+ "build": 65,
+ "version": "4.12.4",
  "notes": [
-  "Takvimi parmakla sağa/sola sürükleyince tarihler gün gün kayar; hızlı kaydırıp bırakınca birkaç gün daha ilerler"
+  "Takvim parmakla kaydırılırken pürüzsüz akar; bırakınca yavaşlayıp en yakın güne yumuşakça oturur"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_64_windows.pck",
-  "sha256": "7672fb99a94bbb1b9c5bd51612c548877b35d58e7095c26df173606554bbddd3",
-  "size": 2472480
+  "file": "paketler/bungalov_65_windows.pck",
+  "sha256": "722a7989d60a30f88b12176476e254929a04342f7326581b023b26cf783ce3b6",
+  "size": 2473120
  },
  "android": {
-  "file": "paketler/bungalov_64_android.pck",
-  "sha256": "7672fb99a94bbb1b9c5bd51612c548877b35d58e7095c26df173606554bbddd3",
-  "size": 2472480
+  "file": "paketler/bungalov_65_android.pck",
+  "sha256": "722a7989d60a30f88b12176476e254929a04342f7326581b023b26cf783ce3b6",
+  "size": 2473120
  }
 }
