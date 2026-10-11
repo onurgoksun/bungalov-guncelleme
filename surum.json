@@ -1,20 +1,18 @@
 {
- "build": 74,
- "version": "4.18",
+ "build": 75,
+ "version": "4.19",
  "notes": [
-  "Telefonda dikey Fiyatlar, Piyasa, Ayarlar ve Yönetim: Diğer sekmesinden tam ekran açılır",
-  "Piyasa fiyat tablosu dikeyde 5 gece, her rakip kendi satırında",
-  "Telefon artık bütün bölümlerde dik de kullanılabilir"
+  "iPad ve tabletlerde dik tutunca mobil düzen açılır, yan çevirince geniş düzen"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_74_windows.pck",
-  "sha256": "ad572983c236305a605c3c64bf9824730bd6c06de45900e4fae5074f3fc11fc9",
-  "size": 2705472
+  "file": "paketler/bungalov_75_windows.pck",
+  "sha256": "59888fcfcce6b1ed204d9b995d99096975f05c704d471b72fc24c56ef6ea36e3",
+  "size": 2705600
  },
  "android": {
-  "file": "paketler/bungalov_74_android.pck",
-  "sha256": "ad572983c236305a605c3c64bf9824730bd6c06de45900e4fae5074f3fc11fc9",
-  "size": 2705472
+  "file": "paketler/bungalov_75_android.pck",
+  "sha256": "59888fcfcce6b1ed204d9b995d99096975f05c704d471b72fc24c56ef6ea36e3",
+  "size": 2705600
  }
 }
