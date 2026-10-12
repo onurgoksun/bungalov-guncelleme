@@ -1,18 +1,19 @@
 {
- "build": 81,
- "version": "4.25",
+ "build": 82,
+ "version": "4.26",
  "notes": [
-  "Hareket kaydı: kim hangi cihazdan ne zaman giriş yaptı / uygulamayı açtı"
+  "Yeni tasarım dili: web sitesiyle aynı renkler ve yazı tipleri",
+  "Misafir anketi: çıkış yapan misafire WhatsApp ile anket linki, sonuçlar Ayarlar'da"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_81_windows.pck",
-  "sha256": "2e58ec851d77f35ce32582811cd569f4f8269a318e60aa52ddaa433cf1ded2f7",
-  "size": 2728400
+  "file": "paketler/bungalov_82_windows.pck",
+  "sha256": "d6bd5f7cfc3123b769eadae9e885d5e4dfd727e3acaf2b3eff01858f1905205e",
+  "size": 3306064
  },
  "android": {
-  "file": "paketler/bungalov_81_android.pck",
-  "sha256": "2e58ec851d77f35ce32582811cd569f4f8269a318e60aa52ddaa433cf1ded2f7",
-  "size": 2728400
+  "file": "paketler/bungalov_82_android.pck",
+  "sha256": "d6bd5f7cfc3123b769eadae9e885d5e4dfd727e3acaf2b3eff01858f1905205e",
+  "size": 3306064
  }
 }
