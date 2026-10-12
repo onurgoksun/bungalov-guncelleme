@@ -414,7 +414,7 @@ body.embed .hero { display: none; }
   // iframe içinde yüksekliği bildir (WordPress sayfasına gömülünce kaydırma çubuğu çıkmasın)
   function postHeight() {
     if (window.self === window.top) return;
-    try { window.parent.postMessage({ labella: "yukseklik", h: document.documentElement.scrollHeight }, "*"); } catch (e) {}
+    try { window.parent.postMessage({ labella: "yukseklik", h: Math.ceil(document.querySelector("main").getBoundingClientRect().height + 8) }, "*"); } catch (e) {}
   }
   window.addEventListener("resize", postHeight);
 
