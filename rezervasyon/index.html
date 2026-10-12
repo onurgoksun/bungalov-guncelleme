@@ -8,25 +8,26 @@
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #ffffff; --ink: #222222; --ink2: #6a6a6a; --ink3: #8f8f8f; --line: #dddddd; --soft: #f7f7f7; --band: #f1f1ef;
-  --brand: #1f4d38; --brand2: #2c6a4e; --full: #b5413a; --radius: 16px;
+  --bg: #faf7f2; --ink: #1f1b16; --ink2: #5c544a; --ink3: #8f867a; --line: #e4dccd; --line2: #cdbfae; --soft: #f3ede3; --band: #f3ede3;
+  --brand: #c9786a; --brand2: #b3655a; --dark: #16130f; --full: #b5413a; --radius: 4px;
+  --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
 }
 * { box-sizing: border-box; }
 html, body { margin: 0; }
-body { background: var(--bg); color: var(--ink); font: 15px/1.5 "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif; -webkit-font-smoothing: antialiased; }
+body { background: var(--bg); color: var(--ink); font: 15.5px/1.55 "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
 button, input, textarea { font: inherit; color: inherit; }
-h1, h2, h3 { font-family: "Fraunces", Georgia, serif; font-weight: 600; letter-spacing: -.01em; margin: 0; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 500; letter-spacing: -.005em; margin: 0; }
 .hidden { display: none !important; }
 
 .hero { position: relative; min-height: 190px; display: flex; align-items: flex-end;
   background: #2b3a31 url("https://labellabungalov.com/wp-content/uploads/2026/09/labella-bungalov-sapanca-39.webp") center 60% / cover no-repeat; color: #fff; }
 .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.05) 20%, rgba(12,24,17,.7)); }
 .hero .in { position: relative; z-index: 1; width: 100%; max-width: 1080px; margin: 0 auto; padding: 24px 24px 22px; }
-.hero .brand { font-size: 12.5px; letter-spacing: .14em; text-transform: uppercase; opacity: .9; }
-.hero h1 { font-size: clamp(26px, 4.5vw, 36px); line-height: 1.1; margin-top: 6px; }
+.hero .brand { font-size: 11.5px; letter-spacing: .22em; text-transform: uppercase; color: #e3a89c; }
+.hero h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.08; margin-top: 8px; color: #f3ede3; }
 body.embed .hero { display: none; }
 
 .wrap { max-width: 1080px; margin: 0 auto; padding: 28px 24px 40px; }
@@ -37,20 +38,20 @@ body.embed .hero { display: none; }
 .cal-hd { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 18px; }
 .cal-hd .tt { flex: 1; }
 @media (max-width: 900px) { body.embed .cal-hd { padding-right: 54px; } body.embed .wrap { padding-top: 18px; } }
-.cal-hd h2 { font-size: 22px; }
-.cal-hd p { margin: 4px 0 0; color: var(--ink2); font-size: 14px; }
+.cal-hd h2 { font-size: 32px; line-height: 1.1; }
+.cal-hd p { margin: 6px 0 0; color: var(--ink2); font-size: 15px; }
 .nav { display: flex; gap: 8px; }
-.iconbtn { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line); background: #fff; display: grid; place-items: center; cursor: pointer; transition: background .15s; }
+.iconbtn { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line2); background: transparent; display: grid; place-items: center; cursor: pointer; transition: background .15s; }
 .iconbtn:hover:not(:disabled) { background: var(--soft); }
 .iconbtn:disabled { opacity: .3; cursor: default; }
 .months { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
 @media (max-width: 640px) { .months { grid-template-columns: 1fr; } .months .m2 { display: none; } }
-.month h3 { font-family: "Inter", system-ui, sans-serif; font-size: 15px; font-weight: 600; margin: 2px 0 14px; text-align: center; letter-spacing: 0; }
+.month h3 { font-size: 22px; font-weight: 600; margin: 2px 0 14px; text-align: center; }
 .wd, .days { display: grid; grid-template-columns: repeat(7, 1fr); }
 .days { row-gap: 2px; }
-.wd span { font-size: 12px; font-weight: 500; color: var(--ink3); text-align: center; padding-bottom: 8px; }
+.wd span { font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--ink3); text-align: center; padding-bottom: 8px; }
 .day { position: relative; height: 48px; border: 0; background: transparent; padding: 0; cursor: pointer; display: flex; align-items: center; justify-content: center; }
-.day .n { width: 44px; height: 44px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 14.5px; font-weight: 500; border: 1px solid transparent; transition: border-color .1s; }
+.day .n { width: 44px; height: 44px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 15.5px; font-weight: 500; border: 1px solid transparent; transition: border-color .1s; }
 .day:not(.past):not(.blank):not(.off):not(.ci):not(.co):hover .n { border-color: var(--ink); }
 .day.today .n { font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
 .day.full .n, .day.off .n { color: #b0b0b0; text-decoration: line-through; font-weight: 400; }
@@ -62,77 +63,77 @@ body.embed .hero { display: none; }
 .day.past { cursor: default; }
 .day.blank { visibility: hidden; }
 .day.inr, .day.hov { background: var(--band); }
-.day.ci .n, .day.co .n { background: var(--ink); color: #fff; border-color: var(--ink); text-decoration: none; font-weight: 600; }
+.day.ci .n, .day.co .n { background: var(--dark); color: #f3ede3; border-color: var(--dark); text-decoration: none; font-weight: 600; }
 .day.ci.rng { background: linear-gradient(90deg, transparent 50%, var(--band) 50%); }
 .day.co.rng { background: linear-gradient(90deg, var(--band) 50%, transparent 50%); }
 .day.hov-end { background: linear-gradient(90deg, var(--band) 50%, transparent 50%); }
-.day.hov-end .n { border-color: var(--ink); }
+.day.hov-end .n { border-color: var(--dark); }
 .cal-ft { display: flex; align-items: center; gap: 14px; margin-top: 14px; flex-wrap: wrap; }
-.cal-ft .lg { font-size: 12.5px; color: var(--ink2); flex: 1; }
+.cal-ft .lg { font-size: 13px; color: var(--ink2); flex: 1; }
 .cal-ft .lg s { color: #b0b0b0; }
-.linkbtn { background: none; border: 0; padding: 6px 0; font-weight: 600; font-size: 14px; text-decoration: underline; cursor: pointer; color: var(--ink); }
+.linkbtn { background: none; border: 0; padding: 6px 0; font-weight: 500; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; text-decoration: underline; cursor: pointer; color: var(--ink); }
 .linkbtn:disabled { opacity: .3; cursor: default; text-decoration: none; }
 .err { margin-top: 12px; color: var(--full); font-size: 14px; font-weight: 500; }
 
 /* ---------- sağdaki rezervasyon kartı */
 .side { position: sticky; top: 16px; }
 @media (max-width: 900px) { .side { position: static; } }
-.bk { border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 6px 20px rgba(0,0,0,.10); padding: 22px; background: #fff; }
+.bk { border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 14px 40px rgba(31,27,22,.10); padding: 24px; background: #fff; }
 .bk .ph { display: flex; gap: 14px; align-items: center; margin-bottom: 18px; }
-.bk .ph .img { width: 84px; height: 72px; border-radius: 12px; flex: none; background: #2b3a31 url("https://labellabungalov.com/wp-content/uploads/2026/09/labella-bungalov-sapanca-39.webp") center / cover no-repeat; }
-.bk .ph b { display: block; font-size: 16px; line-height: 1.25; }
+.bk .ph .img { width: 84px; height: 72px; border-radius: 2px; flex: none; background: #2b3a31 url("https://labellabungalov.com/wp-content/uploads/2026/09/labella-bungalov-sapanca-39.webp") center / cover no-repeat; }
+.bk .ph b { display: block; font-family: var(--serif); font-size: 22px; font-weight: 600; line-height: 1.1; }
 .bk .ph span { font-size: 13px; color: var(--ink2); }
-.bk h3.q { font-family: "Inter", system-ui, sans-serif; font-size: 20px; font-weight: 600; margin: 0 0 14px; letter-spacing: -.01em; }
-.sel { border: 1px solid #b0b0b0; border-radius: 12px; overflow: hidden; }
+.bk h3.q { font-size: 26px; font-weight: 500; margin: 0 0 14px; }
+.sel { border: 1px solid var(--line2); border-radius: 3px; overflow: hidden; }
 .sel .two { display: grid; grid-template-columns: 1fr 1fr; }
 .sel .cell { padding: 10px 14px 11px; text-align: left; background: #fff; border: 0; cursor: pointer; min-width: 0; }
-.sel .cell + .cell { border-left: 1px solid #b0b0b0; }
+.sel .cell + .cell { border-left: 1px solid var(--line2); }
 .sel .cell:hover { background: var(--soft); }
-.sel .cell.on { box-shadow: inset 0 0 0 2px var(--ink); border-radius: 12px; }
-.sel .cell label { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; cursor: pointer; }
+.sel .cell.on { box-shadow: inset 0 0 0 1.5px var(--brand); }
+.sel .cell label { display: block; font-size: 10.5px; font-weight: 500; letter-spacing: .18em; color: var(--brand); text-transform: uppercase; cursor: pointer; }
 .sel .cell span { display: block; font-size: 14px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .sel .cell span.ph0 { color: var(--ink3); }
-.sel .gst { display: flex; align-items: center; width: 100%; border-top: 1px solid #b0b0b0; text-align: left; }
+.sel .gst { display: flex; align-items: center; width: 100%; border-top: 1px solid var(--line2); text-align: left; }
 .sel .gst .tx { flex: 1; min-width: 0; }
 .sel .gst svg { flex: none; margin-right: 14px; transition: transform .15s; }
 .sel .gst.open svg { transform: rotate(180deg); }
-.gpanel { border: 1px solid var(--line); border-radius: 12px; padding: 4px 16px; margin-top: 10px; }
+.gpanel { border: 1px solid var(--line); border-radius: 3px; padding: 4px 16px; margin-top: 10px; }
 .row { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 14px 0; }
 .row + .row { border-top: 1px solid var(--line); }
-.row .t { font-weight: 600; font-size: 14.5px; }
+.row .t { font-weight: 500; font-size: 15px; }
 .row .s { font-size: 12.5px; color: var(--ink2); }
 .step { display: flex; align-items: center; gap: 12px; }
-.step button { width: 32px; height: 32px; border-radius: 50%; border: 1px solid #b0b0b0; background: #fff; font-size: 18px; cursor: pointer; line-height: 1; color: var(--ink2); }
-.step button:hover:not(:disabled) { border-color: var(--ink); color: var(--ink); }
+.step button { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--line2); background: #fff; font-size: 18px; cursor: pointer; line-height: 1; color: var(--ink2); }
+.step button:hover:not(:disabled) { border-color: var(--brand); color: var(--brand); }
 .step button:disabled { opacity: .3; cursor: default; }
 .step span { min-width: 20px; text-align: center; font-weight: 500; }
-.primary { width: 100%; margin-top: 16px; border: 0; border-radius: 12px; padding: 15px 18px; background: var(--brand); color: #fff; font-weight: 600; font-size: 16px; cursor: pointer; transition: background .15s, transform .08s; }
+.primary { width: 100%; margin-top: 18px; border: 1px solid transparent; border-radius: 2px; padding: 17px 24px; background: var(--brand); color: #fff; font-weight: 400; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; cursor: pointer; transition: background .15s, transform .08s; }
 .primary:hover:not(:disabled) { background: var(--brand2); }
 .primary:active:not(:disabled) { transform: scale(.99); }
 .primary:disabled { opacity: .4; cursor: default; }
 .note { margin-top: 12px; font-size: 12.5px; color: var(--ink2); text-align: center; }
 .sumline { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 14.5px; }
-.sumline b { font-weight: 600; }
+.sumline b { font-weight: 500; font-family: var(--serif); font-size: 21px; }
 .sumline .av { color: var(--ink2); font-size: 13px; margin-top: 2px; }
 .f { margin-top: 12px; }
-.f label { display: block; font-size: 13px; font-weight: 500; color: var(--ink2); margin-bottom: 5px; }
-.f input, .f textarea { width: 100%; border: 1px solid #b0b0b0; border-radius: 10px; padding: 12px 14px; background: #fff; font-size: 16px; outline: none; transition: border-color .15s, box-shadow .15s; }
+.f label { display: block; font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--ink2); margin-bottom: 6px; }
+.f input, .f textarea { width: 100%; border: 1px solid var(--line2); border-radius: 2px; padding: 12px 14px; background: #fff; font-size: 16px; outline: none; transition: border-color .15s, box-shadow .15s; }
 .f textarea { min-height: 72px; resize: vertical; }
-.f input:focus, .f textarea:focus { border-color: var(--ink); box-shadow: 0 0 0 1px var(--ink); }
+.f input:focus, .f textarea:focus { border-color: var(--brand); box-shadow: 0 0 0 1px var(--brand); }
 .kvkk { display: flex; gap: 10px; align-items: flex-start; margin-top: 14px; font-size: 13px; color: var(--ink2); }
 .kvkk input { width: 18px; height: 18px; margin-top: 2px; accent-color: var(--brand); }
-.kvkk a { color: var(--ink); }
-.back { display: inline-flex; align-items: center; gap: 6px; background: none; border: 0; padding: 0 0 10px; font-weight: 600; font-size: 14px; cursor: pointer; }
-.wa { display: inline-flex; align-items: center; gap: 8px; color: var(--brand); font-weight: 600; text-decoration: none; }
+.kvkk a { color: var(--brand2); }
+.back { display: inline-flex; align-items: center; gap: 6px; background: none; border: 0; padding: 0 0 10px; font-weight: 500; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; cursor: pointer; }
+.wa { display: inline-flex; align-items: center; gap: 8px; color: var(--brand2); font-weight: 500; text-decoration: none; }
 .mini { margin-top: 18px; font-size: 13px; color: var(--ink2); }
 
 .state { padding: 24px 6px 8px; text-align: center; }
-.state h2 { font-size: 22px; margin-bottom: 8px; }
+.state h2 { font-size: 30px; margin-bottom: 8px; }
 .state p { color: var(--ink2); margin: 6px auto; }
-.ok-ic { width: 60px; height: 60px; border-radius: 50%; background: #e3efe7; color: var(--brand); display: grid; place-items: center; margin: 0 auto 14px; }
-.skel { height: 330px; border-radius: 12px; background: linear-gradient(90deg, #f3f3f3 25%, #fafafa 50%, #f3f3f3 75%); background-size: 200% 100%; animation: sk 1.2s infinite; }
+.ok-ic { width: 60px; height: 60px; border-radius: 50%; background: #f6e3de; color: var(--brand); display: grid; place-items: center; margin: 0 auto 14px; }
+.skel { height: 330px; border-radius: 4px; background: linear-gradient(90deg, #f3ede3 25%, #faf7f2 50%, #f3ede3 75%); background-size: 200% 100%; animation: sk 1.2s infinite; }
 @keyframes sk { to { background-position: -200% 0; } }
-.foot { text-align: center; color: var(--ink3); font-size: 12.5px; margin-top: 34px; }
+.foot { text-align: center; color: var(--ink3); font-size: 13px; margin-top: 34px; }
 .foot a { color: var(--ink2); }
 </style>
 </head>
@@ -198,7 +199,7 @@ body.embed .hero { display: none; }
         <div id="step2" class="hidden">
           <button type="button" class="back" id="back"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>Geri</button>
           <h3 class="q">İletişim bilgileriniz</h3>
-          <div class="sel" style="margin-bottom:6px"><div style="padding:11px 14px;font-size:14px"><b id="s2Dates"></b><div style="color:var(--ink2);font-size:13px" id="s2Meta"></div></div></div>
+          <div class="sel" style="margin-bottom:6px"><div style="padding:12px 14px;font-size:15px"><b id="s2Dates" style="font-weight:500"></b><div style="color:var(--ink2);font-size:13px" id="s2Meta"></div></div></div>
           <div class="f"><label for="name">Ad soyad</label><input id="name" autocomplete="name" maxlength="80" placeholder="Adınız ve soyadınız"></div>
           <div class="f"><label for="phone">Telefon</label><input id="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="05xx xxx xx xx"></div>
           <div class="f"><label for="note">Not <span style="color:var(--ink3);font-weight:400">(isteğe bağlı)</span></label><textarea id="note" maxlength="500" placeholder="Örn. evcil hayvanımız var, geç giriş yapacağız…"></textarea></div>
