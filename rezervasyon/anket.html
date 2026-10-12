@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Konaklama Anketi · Labella Bungalov</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #faf7f2; --ink: #1f1b16; --ink2: #5c544a; --ink3: #8f867a; --line: #e4dccd; --line2: #cdbfae; --soft: #f3ede3;
+  --brand: #c9786a; --brand2: #b3655a; --gold: #d9a21b; --err: #b5413a;
+  --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--ink); font: 16px/1.55 "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+button, textarea { font: inherit; color: inherit; }
+h1, h2 { font-family: var(--serif); font-weight: 500; margin: 0; letter-spacing: -.005em; }
+.hidden { display: none !important; }
+main { max-width: 620px; margin: 0 auto; padding: 36px 20px 48px; }
+.brand { font-size: 11.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--brand2); }
+h1 { font-size: clamp(32px, 7vw, 44px); line-height: 1.08; margin-top: 8px; }
+.lead { color: var(--ink2); margin: 12px 0 28px; }
+.q { padding: 18px 0; border-top: 1px solid var(--line); }
+.q label.t { display: block; font-family: var(--serif); font-size: 22px; line-height: 1.2; margin-bottom: 10px; }
+.stars { display: flex; gap: 4px; }
+.stars button { background: none; border: 0; padding: 2px; cursor: pointer; font-size: 38px; line-height: 1; color: var(--line2); transition: transform .08s; }
+.stars button.on { color: var(--gold); }
+.stars button:active { transform: scale(1.15); }
+.hint { font-size: 13px; color: var(--ink3); margin-top: 4px; min-height: 18px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips button { border: 1px solid var(--line2); background: #fff; border-radius: 999px; padding: 10px 18px; cursor: pointer; }
+.chips button.on { background: var(--brand2); border-color: var(--brand2); color: #fff; }
+textarea { width: 100%; min-height: 110px; border: 1px solid var(--line2); border-radius: 4px; background: #fff; padding: 12px 14px; resize: vertical; }
+textarea:focus { outline: 2px solid var(--brand); outline-offset: 1px; }
+.send { width: 100%; margin-top: 8px; border: 0; border-radius: 4px; background: var(--brand2); color: #fff; padding: 15px; font-size: 16px; font-weight: 500; cursor: pointer; }
+.send:disabled { opacity: .55; cursor: default; }
+.err { color: var(--err); min-height: 22px; margin-top: 10px; font-size: 14.5px; }
+.done { text-align: center; padding: 40px 0; }
+.done .ok { font-size: 54px; color: var(--brand2); }
+.done h2 { font-size: 36px; margin: 10px 0 8px; }
+.done p { color: var(--ink2); margin: 0 auto; max-width: 420px; }
+.rev { display: inline-block; margin-top: 18px; color: var(--brand2); font-weight: 500; text-decoration: none; border-bottom: 1px solid currentColor; }
+</style>
+</head>
+<body>
+<main>
+  <div id="load" style="color:var(--ink2)">Yükleniyor…</div>
+
+  <div id="form" class="hidden">
+    <div class="brand" id="fac">Labella Bungalov</div>
+    <h1 id="hello">Konaklamanızı değerlendirin</h1>
+    <p class="lead">Bizi tercih ettiğiniz için teşekkür ederiz. Görüşleriniz hizmetimizi geliştirmemize yardımcı olur. Yaklaşık bir dakikanızı alır.</p>
+
+    <div class="q" data-k="genel"><label class="t">Genel olarak konaklamanızdan ne kadar memnun kaldınız?</label><div class="stars"></div><div class="hint"></div></div>
+    <div class="q" data-k="temizlik"><label class="t">Bungalovun temizliği nasıldı?</label><div class="stars"></div><div class="hint"></div></div>
+    <div class="q" data-k="konfor"><label class="t">Konfor ve olanaklar (havuz, jakuzi, şömine, mutfak)</label><div class="stars"></div><div class="hint"></div></div>
+    <div class="q" data-k="ilgi"><label class="t">Bizim ilgimiz ve iletişimimiz</label><div class="stars"></div><div class="hint"></div></div>
+    <div class="q" data-k="tavsiye"><label class="t">Bizi arkadaşlarınıza tavsiye eder misiniz?</label>
+      <div class="chips"><button type="button" data-v="evet">Evet</button><button type="button" data-v="belki">Belki</button><button type="button" data-v="hayir">Hayır</button></div></div>
+    <div class="q"><label class="t" for="yorum">Eklemek istedikleriniz <span style="font-family:Jost;font-size:14px;color:var(--ink3)">(isteğe bağlı)</span></label>
+      <textarea id="yorum" maxlength="1000" placeholder="Beğendiğiniz ya da geliştirmemizi istediğiniz şeyler…"></textarea></div>
+    <button class="send" id="send" type="button">Gönder</button>
+    <div class="err" id="err"></div>
+  </div>
+
+  <div id="done" class="done hidden">
+    <div class="ok">♡</div>
+    <h2>Teşekkür ederiz</h2>
+    <p id="doneTxt">Değerlendirmeniz bize ulaştı. Sizi tekrar ağırlamayı umuyoruz.</p>
+    <a class="rev hidden" id="rev" target="_blank" rel="noopener" href="#">Google'da da yorum yazarak bize destek olabilirsiniz</a>
+  </div>
+</main>
+<script>
+(function () {
+  var API = "https://sbqjblbiwivytybtlxdi.supabase.co";
+  var KEY = "sb_publishable_YeZQ1VWS7RrQMxW5Ubrykg_7q_k0N9A";
+  var REVIEW_URL = ""; // Google yorum bağlantısı verilirse "yorum yaz" bağlantısı görünür
+  var HINTS = ["", "Çok kötü", "Kötü", "Orta", "İyi", "Mükemmel"];
+  var Q = new URLSearchParams(location.search);
+  var TOKEN = (Q.get("k") || "").replace(/[^a-z0-9]/gi, "");
+  var A = {};
+  function $(id) { return document.getElementById(id); }
+  function rpc(fn, args) {
+    return fetch(API + "/rest/v1/rpc/" + fn, {
+      method: "POST",
+      headers: { "apikey": KEY, "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify(args)
+    }).then(function (r) {
+      return r.text().then(function (t) {
+        var d; try { d = JSON.parse(t); } catch (e) { d = null; }
+        if (!r.ok) throw new Error((d && d.message) || "İşlem yapılamadı");
+        return d;
+      });
+    });
+  }
+  function postHeight() {
+    if (window.self === window.top) return;
+    try { window.parent.postMessage({ labella: "yukseklik", h: Math.ceil(document.querySelector("main").getBoundingClientRect().height + 8) }, "*"); } catch (e) {}
+  }
+  if (window.self !== window.top) document.body.style.background = "transparent";
+  window.addEventListener("resize", postHeight);
+
+  document.querySelectorAll(".q[data-k] .stars").forEach(function (box) {
+    var k = box.parentNode.dataset.k, h = "";
+    for (var i = 1; i <= 5; i++) h += '<button type="button" aria-label="' + i + ' yıldız" data-v="' + i + '">★</button>';
+    box.innerHTML = h;
+    box.addEventListener("click", function (e) {
+      var b = e.target.closest("button"); if (!b) return;
+      var v = +b.dataset.v; A[k] = v;
+      box.querySelectorAll("button").forEach(function (x) { x.classList.toggle("on", +x.dataset.v <= v); });
+      box.parentNode.querySelector(".hint").textContent = HINTS[v];
+    });
+  });
+  document.querySelector(".chips").addEventListener("click", function (e) {
+    var b = e.target.closest("button"); if (!b) return;
+    A.tavsiye = b.dataset.v;
+    this.querySelectorAll("button").forEach(function (x) { x.classList.toggle("on", x === b); });
+  });
+
+  function show(id) {
+    ["load", "form", "done"].forEach(function (x) { $(x).classList.toggle("hidden", x !== id); });
+    postHeight();
+  }
+  function fail(msg) { $("load").textContent = msg; $("load").style.color = "#b5413a"; show("load"); }
+
+  if (!TOKEN) { fail("Anket bağlantısı eksik. Lütfen size gönderilen bağlantıyı kullanın."); return; }
+  rpc("survey_info", { p_token: TOKEN }).then(function (d) {
+    $("fac").textContent = d.facility || "Labella Bungalov";
+    if (d.guest) $("hello").textContent = "Merhaba " + d.guest + ", konaklamanız nasıldı?";
+    if (d.answered) { $("doneTxt").textContent = "Bu anketi daha önce yanıtladınız. Katkınız için teşekkür ederiz."; show("done"); return; }
+    show("form");
+  }).catch(function (e) { fail(e.message); });
+
+  $("send").onclick = function () {
+    $("err").textContent = "";
+    var need = ["genel", "temizlik", "konfor", "ilgi", "tavsiye"];
+    for (var i = 0; i < need.length; i++) if (!A[need[i]]) { $("err").textContent = "Lütfen bütün soruları yanıtlayın."; return; }
+    var btn = $("send"); btn.disabled = true; btn.textContent = "Gönderiliyor…";
+    A.yorum = $("yorum").value;
+    rpc("submit_survey", { p_token: TOKEN, p_answers: A }).then(function () {
+      if (REVIEW_URL && A.genel >= 4) { $("rev").href = REVIEW_URL; $("rev").classList.remove("hidden"); }
+      show("done");
+    }).catch(function (e) {
+      $("err").textContent = e.message; btn.disabled = false; btn.textContent = "Gönder";
+    });
+  };
+})();
+</script>
+</body>
+</html>
