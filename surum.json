@@ -1,19 +1,19 @@
 {
- "build": 79,
- "version": "4.23",
+ "build": 80,
+ "version": "4.24",
  "notes": [
-  "Hareket kaydı: kim, ne zaman, ne yaptı (Yönetim → Hareket kaydı)",
-  "Rezervasyon kartında Geçmiş butonu"
+  "Ayarlar: iki bungalovun takvim linkini (ve Airbnb kayıtlarını) yer değiştir",
+  "Airbnb rezervasyonlarında konaklama sürerken isim/telefon/not düzenlenebilir"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_79_windows.pck",
-  "sha256": "8e468a09d440ddfc0ecca1ea5a4957e4df146588be17c9d9d6a612ff6ad3b430",
-  "size": 2724144
+  "file": "paketler/bungalov_80_windows.pck",
+  "sha256": "af0301dab6d40ee45029ae218b4998354e24c167587f625f87e09ff341d50d27",
+  "size": 2726208
  },
  "android": {
-  "file": "paketler/bungalov_79_android.pck",
-  "sha256": "8e468a09d440ddfc0ecca1ea5a4957e4df146588be17c9d9d6a612ff6ad3b430",
-  "size": 2724144
+  "file": "paketler/bungalov_80_android.pck",
+  "sha256": "af0301dab6d40ee45029ae218b4998354e24c167587f625f87e09ff341d50d27",
+  "size": 2726208
  }
 }
