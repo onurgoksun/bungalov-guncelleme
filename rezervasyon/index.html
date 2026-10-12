@@ -31,7 +31,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; letter-spacing: -.005e
 body.embed .hero { display: none; }
 
 .wrap { max-width: 1080px; margin: 0 auto; padding: 28px 24px 40px; }
-.grid { display: grid; grid-template-columns: minmax(0, 1fr) 372px; gap: 56px; align-items: start; }
+.grid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 40px; align-items: start; }
 @media (max-width: 900px) { .grid { grid-template-columns: minmax(0, 1fr); gap: 28px; } .wrap { padding: 22px 16px 32px; } }
 
 /* ---------- takvim */
@@ -44,14 +44,15 @@ body.embed .hero { display: none; }
 .iconbtn { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line2); background: transparent; display: grid; place-items: center; cursor: pointer; transition: background .15s; }
 .iconbtn:hover:not(:disabled) { background: var(--soft); }
 .iconbtn:disabled { opacity: .3; cursor: default; }
-.months { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.months { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 28px; }
+.month { min-width: 0; }
 @media (max-width: 640px) { .months { grid-template-columns: 1fr; } .months .m2 { display: none; } }
 .month h3 { font-size: 22px; font-weight: 600; margin: 2px 0 14px; text-align: center; }
 .wd, .days { display: grid; grid-template-columns: repeat(7, 1fr); }
 .days { row-gap: 2px; }
 .wd span { font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--ink3); text-align: center; padding-bottom: 8px; }
-.day { position: relative; height: 48px; border: 0; background: transparent; padding: 0; cursor: pointer; display: flex; align-items: center; justify-content: center; }
-.day .n { width: 44px; height: 44px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 15.5px; font-weight: 500; border: 1px solid transparent; transition: border-color .1s; }
+.day { position: relative; height: auto; aspect-ratio: 1 / 1; max-height: 48px; border: 0; background: transparent; padding: 0; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.day .n { width: min(44px, 92%); aspect-ratio: 1 / 1; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 15.5px; font-weight: 500; border: 1px solid transparent; transition: border-color .1s; }
 .day:not(.past):not(.blank):not(.off):not(.ci):not(.co):hover .n { border-color: var(--ink); }
 .day.today .n { font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
 .day.full .n, .day.off .n { color: #b0b0b0; text-decoration: line-through; font-weight: 400; }
@@ -246,6 +247,7 @@ body.embed .hero { display: none; }
   function diff(a, b) { return Math.round((parse(b) - parse(a)) / 86400000); }
   function wd(s) { return (parse(s).getDay() + 6) % 7; }
   function pretty(s) { var d = parse(s); return d.getDate() + " " + AYLAR[d.getMonth()] + " " + GUN_UZUN[wd(s)]; }
+  function cell(s) { var d = parse(s); return GUN[wd(s)] + ", " + d.getDate() + " " + AYLAR[d.getMonth()]; }
   function short(s) { var d = parse(s); return d.getDate() + " " + AYLAR[d.getMonth()].slice(0, 3); }
 
   function rpc(fn, body) {
@@ -386,9 +388,9 @@ body.embed .hero { display: none; }
     if (S.units > maxU) S.units = maxU;
     if (S.guests > S.units * 5) S.guests = S.units * 5;
 
-    $("ciTxt").textContent = S.ci ? pretty(S.ci) : "Tarih ekleyin";
+    $("ciTxt").textContent = S.ci ? cell(S.ci) : "Tarih ekleyin";
     $("ciTxt").className = S.ci ? "" : "ph0";
-    $("coTxt").textContent = S.co ? pretty(S.co) : "Tarih ekleyin";
+    $("coTxt").textContent = S.co ? cell(S.co) : "Tarih ekleyin";
     $("coTxt").className = S.co ? "" : "ph0";
     $("ciBox").classList.toggle("on", !S.ci);
     $("coBox").classList.toggle("on", !!S.ci && !S.co);
