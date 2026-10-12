@@ -1,18 +1,18 @@
 {
- "build": 83,
- "version": "4.27",
+ "build": 84,
+ "version": "4.28",
  "notes": [
-  "Takvim yenilendi: sakin renkler, yumuşak rezervasyon çubukları, ince çizgiler"
+  "Bungalov simgeleri yenilendi: ince halka içinde sade kulübe çizimi"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_83_windows.pck",
-  "sha256": "974aadf5411b657a22a28e6659476394e8d546620aed8756494c10979d1c2cb5",
-  "size": 3305280
+  "file": "paketler/bungalov_84_windows.pck",
+  "sha256": "57c5f9a1312b34f06411e8442ed78e611ab2aaa833b7bdd8f38b327328eb8f0c",
+  "size": 3305440
  },
  "android": {
-  "file": "paketler/bungalov_83_android.pck",
-  "sha256": "974aadf5411b657a22a28e6659476394e8d546620aed8756494c10979d1c2cb5",
-  "size": 3305280
+  "file": "paketler/bungalov_84_android.pck",
+  "sha256": "57c5f9a1312b34f06411e8442ed78e611ab2aaa833b7bdd8f38b327328eb8f0c",
+  "size": 3305440
  }
 }
