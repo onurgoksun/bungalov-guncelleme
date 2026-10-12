@@ -1,18 +1,18 @@
 {
- "build": 84,
- "version": "4.28",
+ "build": 85,
+ "version": "4.29",
  "notes": [
-  "Bungalov simgeleri yenilendi: ince halka içinde sade kulübe çizimi"
+  "Ayarlar'a tema rengi seçimi: hazır renkler ve özel renk"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_84_windows.pck",
-  "sha256": "57c5f9a1312b34f06411e8442ed78e611ab2aaa833b7bdd8f38b327328eb8f0c",
-  "size": 3305440
+  "file": "paketler/bungalov_85_windows.pck",
+  "sha256": "faee53098fc2e0ba496a21cd45ce1347a7a4b07c2ef3fd2bf927663f35dde072",
+  "size": 3308608
  },
  "android": {
-  "file": "paketler/bungalov_84_android.pck",
-  "sha256": "57c5f9a1312b34f06411e8442ed78e611ab2aaa833b7bdd8f38b327328eb8f0c",
-  "size": 3305440
+  "file": "paketler/bungalov_85_android.pck",
+  "sha256": "faee53098fc2e0ba496a21cd45ce1347a7a4b07c2ef3fd2bf927663f35dde072",
+  "size": 3308608
  }
 }
