@@ -1,19 +1,18 @@
 {
- "build": 82,
- "version": "4.26",
+ "build": 83,
+ "version": "4.27",
  "notes": [
-  "Yeni tasarım dili: web sitesiyle aynı renkler ve yazı tipleri",
-  "Misafir anketi: çıkış yapan misafire WhatsApp ile anket linki, sonuçlar Ayarlar'da"
+  "Takvim yenilendi: sakin renkler, yumuşak rezervasyon çubukları, ince çizgiler"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_82_windows.pck",
-  "sha256": "d6bd5f7cfc3123b769eadae9e885d5e4dfd727e3acaf2b3eff01858f1905205e",
-  "size": 3306064
+  "file": "paketler/bungalov_83_windows.pck",
+  "sha256": "974aadf5411b657a22a28e6659476394e8d546620aed8756494c10979d1c2cb5",
+  "size": 3305280
  },
  "android": {
-  "file": "paketler/bungalov_82_android.pck",
-  "sha256": "d6bd5f7cfc3123b769eadae9e885d5e4dfd727e3acaf2b3eff01858f1905205e",
-  "size": 3306064
+  "file": "paketler/bungalov_83_android.pck",
+  "sha256": "974aadf5411b657a22a28e6659476394e8d546620aed8756494c10979d1c2cb5",
+  "size": 3305280
  }
 }
