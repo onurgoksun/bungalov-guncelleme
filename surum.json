@@ -1,18 +1,19 @@
 {
- "build": 78,
- "version": "4.22",
+ "build": 79,
+ "version": "4.23",
  "notes": [
-  "Airbnb bağlanmadan önce elle girilen aynı misafir artık Airbnb kaydıyla otomatik birleşir: çakışma ve yanlış ödeme bekleniyor uyarısı çıkmaz"
+  "Hareket kaydı: kim, ne zaman, ne yaptı (Yönetim → Hareket kaydı)",
+  "Rezervasyon kartında Geçmiş butonu"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_78_windows.pck",
-  "sha256": "317c8dcc81579fc2e2019708acd6d4bb1eb43cdd2089acfad4fbe2917c9ff9e0",
-  "size": 2707360
+  "file": "paketler/bungalov_79_windows.pck",
+  "sha256": "8e468a09d440ddfc0ecca1ea5a4957e4df146588be17c9d9d6a612ff6ad3b430",
+  "size": 2724144
  },
  "android": {
-  "file": "paketler/bungalov_78_android.pck",
-  "sha256": "317c8dcc81579fc2e2019708acd6d4bb1eb43cdd2089acfad4fbe2917c9ff9e0",
-  "size": 2707360
+  "file": "paketler/bungalov_79_android.pck",
+  "sha256": "8e468a09d440ddfc0ecca1ea5a4957e4df146588be17c9d9d6a612ff6ad3b430",
+  "size": 2724144
  }
 }
