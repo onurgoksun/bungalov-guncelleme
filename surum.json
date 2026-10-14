@@ -1,18 +1,18 @@
 {
- "build": 85,
- "version": "4.29",
+ "build": 86,
+ "version": "4.30",
  "notes": [
-  "Ayarlar'a tema rengi seçimi: hazır renkler ve özel renk"
+  "iPhone ve iPad'de bildirimler: yeni rezervasyon, web talebi, sabah özeti, giriş/çıkış ve ödeme hatırlatmaları (Diğer → Bildirimler)"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_85_windows.pck",
-  "sha256": "faee53098fc2e0ba496a21cd45ce1347a7a4b07c2ef3fd2bf927663f35dde072",
-  "size": 3308608
+  "file": "paketler/bungalov_86_windows.pck",
+  "sha256": "68f5cdb7db97a7524093ec2993653c1a7e36178400624b0da48c33024896cbc7",
+  "size": 3318720
  },
  "android": {
-  "file": "paketler/bungalov_85_android.pck",
-  "sha256": "faee53098fc2e0ba496a21cd45ce1347a7a4b07c2ef3fd2bf927663f35dde072",
-  "size": 3308608
+  "file": "paketler/bungalov_86_android.pck",
+  "sha256": "68f5cdb7db97a7524093ec2993653c1a7e36178400624b0da48c33024896cbc7",
+  "size": 3318720
  }
 }
