@@ -1,18 +1,18 @@
 {
- "build": 87,
- "version": "4.31",
+ "build": 88,
+ "version": "4.32",
  "notes": [
-  "Rezervasyondaki kırmızı \"Airbnb'de kapat\" etiketine dokununca Airbnb'de o bungalovun takvimi açılır"
+  "Takvimin üstüne \"Güncelle\" düğmesi geldi: tek dokunuşla bulutla eşitler ve Airbnb takvimini çeker"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_87_windows.pck",
-  "sha256": "df4bc42868a04ce0ec5436aa4ac768d199d43c9e06246d8a9874ad40678bf670",
-  "size": 3319872
+  "file": "paketler/bungalov_88_windows.pck",
+  "sha256": "826839c20c2ad48a8688c7a81614cef034ea3c34d71d227def7459bd10895a6c",
+  "size": 3322512
  },
  "android": {
-  "file": "paketler/bungalov_87_android.pck",
-  "sha256": "df4bc42868a04ce0ec5436aa4ac768d199d43c9e06246d8a9874ad40678bf670",
-  "size": 3319872
+  "file": "paketler/bungalov_88_android.pck",
+  "sha256": "826839c20c2ad48a8688c7a81614cef034ea3c34d71d227def7459bd10895a6c",
+  "size": 3322512
  }
 }
