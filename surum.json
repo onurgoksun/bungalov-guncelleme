@@ -1,18 +1,18 @@
 {
- "build": 86,
- "version": "4.30",
+ "build": 87,
+ "version": "4.31",
  "notes": [
-  "iPhone ve iPad'de bildirimler: yeni rezervasyon, web talebi, sabah özeti, giriş/çıkış ve ödeme hatırlatmaları (Diğer → Bildirimler)"
+  "Rezervasyondaki kırmızı \"Airbnb'de kapat\" etiketine dokununca Airbnb'de o bungalovun takvimi açılır"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_86_windows.pck",
-  "sha256": "68f5cdb7db97a7524093ec2993653c1a7e36178400624b0da48c33024896cbc7",
-  "size": 3318720
+  "file": "paketler/bungalov_87_windows.pck",
+  "sha256": "df4bc42868a04ce0ec5436aa4ac768d199d43c9e06246d8a9874ad40678bf670",
+  "size": 3319872
  },
  "android": {
-  "file": "paketler/bungalov_86_android.pck",
-  "sha256": "68f5cdb7db97a7524093ec2993653c1a7e36178400624b0da48c33024896cbc7",
-  "size": 3318720
+  "file": "paketler/bungalov_87_android.pck",
+  "sha256": "df4bc42868a04ce0ec5436aa4ac768d199d43c9e06246d8a9874ad40678bf670",
+  "size": 3319872
  }
 }
