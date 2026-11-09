@@ -1,18 +1,19 @@
 {
- "build": 88,
- "version": "4.32",
+ "build": 89,
+ "version": "4.33",
  "notes": [
-  "Takvimin üstüne \"Güncelle\" düğmesi geldi: tek dokunuşla bulutla eşitler ve Airbnb takvimini çeker"
+  "Takvimde her rezervasyonun nereden geldiği görünür: Airbnb, Web sitesi ya da Telefon",
+  "Misafir kartında Ara ve WhatsApp düğmeleri: tek dokunuşla arama ekranı ya da WhatsApp sohbeti açılır"
  ],
  "min_launcher": 1,
  "windows": {
-  "file": "paketler/bungalov_88_windows.pck",
-  "sha256": "826839c20c2ad48a8688c7a81614cef034ea3c34d71d227def7459bd10895a6c",
-  "size": 3322512
+  "file": "paketler/bungalov_89_windows.pck",
+  "sha256": "cb9e39009538eb1bdbc89825dde008823509c712afcef725d8de3d3946920330",
+  "size": 4208656
  },
  "android": {
-  "file": "paketler/bungalov_88_android.pck",
-  "sha256": "826839c20c2ad48a8688c7a81614cef034ea3c34d71d227def7459bd10895a6c",
-  "size": 3322512
+  "file": "paketler/bungalov_89_android.pck",
+  "sha256": "cb9e39009538eb1bdbc89825dde008823509c712afcef725d8de3d3946920330",
+  "size": 4208656
  }
 }
