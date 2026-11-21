@@ -198,7 +198,8 @@ body.embed .hero { display: none; }
               <div class="step"><button type="button" id="uMinus" aria-label="Azalt">−</button><span id="uVal">1</span><button type="button" id="uPlus" aria-label="Artır">+</button></div></div>
           </div>
           <button class="primary" id="next1" disabled>Tarih seçin</button>
-          <div class="sumline hidden" id="sumline"><b id="nightsTxt"></b><div class="av" id="availTxt"></div></div>
+          <div class="sumline hidden" id="sumline" role="status"><b id="nightsTxt"></b><div class="av" id="availTxt"></div></div>
+          <p class="note hidden" id="verify"><a class="wa" href="https://wa.me/905327222545" target="_blank" rel="noopener">WhatsApp’tan müsaitlik teyidi iste</a></p>
           <div class="note">Henüz ödeme alınmaz. Talebiniz bize iletilir, sizi arayarak rezervasyonu kesinleştiririz.</div>
           <div class="callus"><span>Dilerseniz bizi arayın</span><a href="tel:+905327222545" target="_top" aria-label="Bizi arayın: +90 532 722 25 45"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+90 532 722 25 45</a></div>
         </div>
@@ -212,6 +213,7 @@ body.embed .hero { display: none; }
           <div class="f"><label for="note">Not <span style="color:var(--ink3);font-weight:400">(isteğe bağlı)</span></label><textarea id="note" maxlength="500" placeholder="Örn. evcil hayvanımız var, geç giriş yapacağız…"></textarea></div>
           <label class="kvkk"><input type="checkbox" id="kvkk"><span>Bilgilerimin rezervasyon talebim için kullanılmasını kabul ediyorum. <a href="https://labellabungalov.com/kvkk-aydinlatma-metni/" target="_blank" rel="noopener">KVKK Aydınlatma Metni</a></span></label>
           <button class="primary" id="send" disabled>Talebi gönder</button>
+          <div class="err hidden" id="stayChanged" role="status">Seçiminizin müsaitliği artık doğrulanamıyor. Geri dönüp tarihleri veya bungalov sayısını kontrol edin.</div>
           <div class="err" id="err2" role="alert"></div>
         </div>
 
@@ -244,7 +246,7 @@ body.embed .hero { display: none; }
   if (Q.get("embed") === "1" || window.self !== window.top) document.body.classList.add("embed");
 
   var $ = function (id) { return document.getElementById(id); };
-  var S = { free: {}, total: 5, today: null, first: null, view: null, ci: null, co: null, guests: 2, units: 1, sending: false, step: 1, gopen: false };
+  var S = { free: {}, total: 0, today: null, view: null, ci: null, co: null, guests: 2, units: 1, sending: false, step: 1, gopen: false };
 
   // ---- tarih yardımcıları (yerel saat, "YYYY-MM-DD")
   function ymd(d) { return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); }
@@ -271,45 +273,43 @@ body.embed .hero { display: none; }
   }
 
   // ---- doluluk
+  var loading;
   function load() {
-    return rpc("public_availability", { p_slug: SLUG, p_from: null, p_days: DAYS }).then(function (r) {
-      S.total = r.total || 0;
+    if (loading) return loading;
+    loading = rpc("public_availability", { p_slug: SLUG, p_from: null, p_days: DAYS }).then(function (r) {
+      if (!r || typeof r.today !== "string" || !Number.isInteger(r.total) || r.total < 0 || !Array.isArray(r.days)) {
+        throw new Error("Doluluk bilgisi doğrulanamadı.");
+      }
+      S.total = r.total;
       S.today = r.today;
       S.free = {};
-      (r.days || []).forEach(function (x) { S.free[x.d] = x.free; });
+      r.days.forEach(function (x) {
+        if (Number.isInteger(x.free) && x.free >= 0 && x.free <= S.total) S.free[x.d] = x.free;
+      });
       if (!S.view) S.view = S.today.slice(0, 8) + "01";
-      S.first = S.today;
-      draw();
-    });
-  }
-  function freeOn(d) { return Object.prototype.hasOwnProperty.call(S.free, d) ? S.free[d] : null; }
-  // [ci, co) gecelerinin en az kaç bungalovu boş?
-  function minFree(ci, co) {
-    var m = 99, d = ci;
-    while (d < co) { var f = freeOn(d); if (f === null) return 0; m = Math.min(m, f); d = add(d, 1); }
-    return m;
-  }
-
-
-  // ---- doluluk
-  function load() {
-    return rpc("public_availability", { p_slug: SLUG, p_from: null, p_days: DAYS }).then(function (r) {
-      S.total = r.total || 0;
-      S.today = r.today;
-      S.free = {};
-      (r.days || []).forEach(function (x) { S.free[x.d] = x.free; });
-      if (!S.view) S.view = S.today.slice(0, 8) + "01";
-      S.first = S.today;
       $("phSub").textContent = "Sapanca, Sakarya · " + S.total + " bungalov";
-      draw();
-    });
+      if (S.step !== 3) draw();
+    }).finally(function () { loading = null; });
+    return loading;
   }
   function freeOn(d) { return Object.prototype.hasOwnProperty.call(S.free, d) ? S.free[d] : null; }
-  // [ci, co) gecelerinin en az kaç bungalovu boş?
-  function minFree(ci, co) {
-    var m = 99, d = ci;
-    while (d < co) { var f = freeOn(d); if (f === null) return 0; m = Math.min(m, f); d = add(d, 1); }
-    return m;
+
+  // API only returns nightly counts. Every occupied unit can eliminate at most
+  // one distinct candidate from the stay; nightly minimum is an upper bound,
+  // not proof that the same unit is free throughout. Checkout is not a night.
+  function stayBounds(ci, co) {
+    if (!ci || !co || ci < S.today || co <= ci || diff(ci, co) > 30) return null;
+    var lower = S.total, upper = S.total;
+    for (var d = ci; d < co; d = add(d, 1)) {
+      var f = freeOn(d);
+      if (f === null) return null;
+      lower -= S.total - f;
+      upper = Math.min(upper, f);
+    }
+    return { lower: Math.max(0, lower), upper: upper };
+  }
+  function canContinue(bounds) {
+    return !!bounds && bounds.lower >= S.units && S.guests <= S.units * 5;
   }
 
   function monthEl(first) {
@@ -337,7 +337,13 @@ body.embed .hero { display: none; }
       else if (S.co && ds === S.co) { bt.classList.add("co", "rng"); }
       else if (S.ci && S.co && ds > S.ci && ds < S.co) bt.classList.add("inr");
       // çıkış seçerken: dolu gün çıkış günü olabilir (o gece kalınmaz)
-      if (S.ci && !S.co && f !== null && f <= 0 && ds > S.ci && minFree(S.ci, ds) >= S.units) bt.classList.add("co-ok");
+      if (S.ci && !S.co && ds > S.ci && f !== null && f <= 0) {
+        var bounds = stayBounds(S.ci, ds);
+        if (bounds && bounds.upper > 0) {
+          bt.classList.add("co-ok");
+          lbl = "çıkış günü seçilebilir";
+        }
+      }
       bt.innerHTML = '<span class="n">' + dd + "</span>";
       bt.setAttribute("aria-label", pretty(ds) + (lbl ? ", " + lbl : ""));
       g.appendChild(bt);
@@ -371,15 +377,7 @@ body.embed .hero { display: none; }
     } else {
       var n = diff(S.ci, ds);
       if (n > 30) { $("err").textContent = "En fazla 30 gece seçilebilir."; return; }
-      var mf = minFree(S.ci, ds);
-      if (mf <= 0) {
-        // arada dolu gece var: bu günü yeni giriş günü yap
-        if (f !== null && f > 0) { S.ci = ds; S.co = null; }
-        else { $("err").textContent = "Seçtiğiniz aralıkta dolu geceler var. Başka bir tarih deneyin."; return; }
-      } else {
-        S.co = ds;
-        if (S.units > mf) S.units = mf;
-      }
+      S.co = ds;
     }
     draw();
     if (S.ci && S.co && window.innerWidth <= 900) { try { $("bk").scrollIntoView({ behavior: "smooth", block: "start" }); } catch (e) {} }
@@ -388,11 +386,13 @@ body.embed .hero { display: none; }
   function guestText() { return S.guests + " kişi · " + S.units + " bungalov"; }
 
   function drawForm() {
-    var mf = S.ci && S.co ? minFree(S.ci, S.co) : (S.ci ? freeOn(S.ci) : S.total);
     var n = S.ci && S.co ? diff(S.ci, S.co) : 0;
-    var maxU = Math.max(1, mf || 1);
-    if (S.units > maxU) S.units = maxU;
-    if (S.guests > S.units * 5) S.guests = S.units * 5;
+    var bounds = n ? stayBounds(S.ci, S.co) : null;
+    var available = canContinue(bounds);
+    var tooFew = !!bounds && bounds.upper < S.units;
+    var guestLimit = S.guests > S.units * 5;
+    var verify = n > 0 && !available && !tooFew && !guestLimit;
+    var maxU = Math.max(1, S.total);
 
     $("ciTxt").textContent = S.ci ? cell(S.ci) : "Tarih ekleyin";
     $("ciTxt").className = S.ci ? "" : "ph0";
@@ -409,46 +409,64 @@ body.embed .hero { display: none; }
     $("uPlus").disabled = S.units >= maxU;
     $("gMinus").disabled = S.guests <= 1;
     $("gPlus").disabled = S.guests >= S.units * 5;
-    $("uHint").textContent = n ? ("Bu tarihlerde en fazla " + maxU) : "Aynı tarihlerde birden fazla";
+    $("uHint").textContent = "Aynı tarihlerde birden fazla";
     $("clear").disabled = !S.ci;
 
     $("calTitle").textContent = n ? (n + " gece") : "Tarihlerinizi seçin";
     $("calSub").textContent = n ? (pretty(S.ci) + " – " + pretty(S.co)) : (S.ci ? "Şimdi çıkış gününe dokunun." : "Giriş ve çıkış günlerine dokunun.");
-    $("qTitle").textContent = n ? "Tarihleriniz müsait" : "Müsaitlik kontrolü";
+    $("qTitle").textContent = !n ? "Müsaitlik kontrolü" : available ? "Tarihleriniz müsait" :
+      guestLimit ? "Misafir sayısını kontrol edin" : tooFew ? "Yeterli bungalov yok" : "Müsaitlik teyidi gerekli";
     $("sumline").classList.toggle("hidden", !n);
+    $("verify").classList.toggle("hidden", !verify);
     if (n) {
       $("nightsTxt").textContent = n + " gece · " + short(S.ci) + " – " + short(S.co);
-      $("availTxt").textContent = "Bu tarihlerde " + mf + " bungalov müsait";
+      $("availTxt").textContent = guestLimit ? "Bir bungalov en fazla 5 kişiliktir." :
+        available ? "Tüm geceler boyunca " + (bounds.lower === bounds.upper ? "" : "en az ") + bounds.lower + " bungalov müsait." :
+        tooFew ? "Seçtiğiniz sayıda bungalov tüm geceler boyunca boş değil. Tarihleri veya bungalov sayısını değiştirin." :
+        "Aynı bungalovun tüm gecelerde boş olduğunu takvimden doğrulayamıyoruz.";
     }
-    $("next1").disabled = !(S.ci && S.co);
-    $("next1").textContent = S.ci && S.co ? "Devam et" : (S.ci ? "Çıkış tarihini seçin" : "Tarih seçin");
+    $("next1").disabled = !available;
+    $("next1").textContent = n ? "Devam et" : (S.ci ? "Çıkış tarihini seçin" : "Tarih seçin");
+    $("stayChanged").classList.toggle("hidden", S.step !== 2 || available);
 
     $("s2Dates").textContent = S.ci && S.co ? (short(S.ci) + " – " + short(S.co) + " · " + n + " gece") : "";
     $("s2Meta").textContent = guestText();
-    var ready = S.ci && S.co && $("name").value.trim().length >= 3 && $("phone").value.replace(/\D/g, "").length >= 10 && $("kvkk").checked && !S.sending;
+    var ready = available && $("name").value.trim().length >= 3 && $("phone").value.replace(/\D/g, "").length >= 10 && $("kvkk").checked && !S.sending;
     $("send").disabled = !ready;
     $("step1").classList.toggle("hidden", S.step !== 1);
     $("step2").classList.toggle("hidden", S.step !== 2);
   }
 
   function send() {
-    if (S.sending) return;
+    if ($("send").disabled || S.sending || S.step !== 2) return;
+    var request = {
+      p_slug: SLUG, p_ci: S.ci, p_co: S.co, p_guests: S.guests, p_units: S.units,
+      p_name: $("name").value.trim(), p_phone: $("phone").value.trim(), p_note: $("note").value.trim()
+    };
     S.sending = true; drawForm();
     $("send").textContent = "Gönderiliyor…";
     $("err2").textContent = "";
-    rpc("submit_booking_request", {
-      p_slug: SLUG, p_ci: S.ci, p_co: S.co, p_guests: S.guests, p_units: S.units,
-      p_name: $("name").value.trim(), p_phone: $("phone").value.trim(), p_note: $("note").value.trim()
+    load().then(function () {
+      if (S.step !== 2 || request.p_ci !== S.ci || request.p_co !== S.co ||
+          request.p_guests !== S.guests || request.p_units !== S.units ||
+          !canContinue(stayBounds(S.ci, S.co))) {
+        throw new Error("Müsaitlik doğrulanamadı. Lütfen seçiminizi kontrol edin.");
+      }
+      // The visitor may edit these fields or withdraw consent while load() is pending.
+      if (!$("kvkk").checked || request.p_name !== $("name").value.trim() ||
+          request.p_phone !== $("phone").value.trim() || request.p_note !== $("note").value.trim()) {
+        throw new Error("Bilgileriniz veya onayınız değişti. Kontrol edip talebi tekrar gönderin.");
+      }
+      return rpc("submit_booking_request", request);
     }).then(function () {
       $("step1").classList.add("hidden"); $("step2").classList.add("hidden");
       $("done").classList.remove("hidden");
-      $("doneTxt").textContent = pretty(S.ci) + " – " + pretty(S.co) + " · " + diff(S.ci, S.co) + " gece · " + S.guests + " kişi" + (S.units > 1 ? " · " + S.units + " bungalov" : "");
+      $("doneTxt").textContent = pretty(request.p_ci) + " – " + pretty(request.p_co) + " · " + diff(request.p_ci, request.p_co) + " gece · " + request.p_guests + " kişi" + (request.p_units > 1 ? " · " + request.p_units + " bungalov" : "");
       S.step = 3;
       postHeight();
       try { window.parent && window.parent.postMessage({ labella: "talep-gonderildi" }, "*"); } catch (e) {}
     }).catch(function (e) {
       $("err2").textContent = e.message || "Talep gönderilemedi. Lütfen tekrar deneyin.";
-      load().catch(function () {});
     }).then(function () {
       S.sending = false; $("send").textContent = "Talebi gönder"; if (S.step !== 3) drawForm();
     });
@@ -493,8 +511,8 @@ body.embed .hero { display: none; }
   $("gMinus").onclick = function () { S.guests = Math.max(1, S.guests - 1); drawForm(); };
   $("gPlus").onclick = function () { S.guests = Math.min(S.units * 5, S.guests + 1); drawForm(); };
   $("uMinus").onclick = function () { S.units = Math.max(1, S.units - 1); draw(); };
-  $("uPlus").onclick = function () { S.units++; draw(); };
-  $("next1").onclick = function () { if (S.ci && S.co) { S.step = 2; S.gopen = false; drawForm(); postHeight(); setTimeout(function () { try { $("name").focus({ preventScroll: true }); } catch (e) {} }, 50); } };
+  $("uPlus").onclick = function () { if (S.units < S.total) { S.units++; draw(); } };
+  $("next1").onclick = function () { if (canContinue(stayBounds(S.ci, S.co))) { S.step = 2; S.gopen = false; drawForm(); postHeight(); setTimeout(function () { try { $("name").focus({ preventScroll: true }); } catch (e) {} }, 50); } };
   $("back").onclick = function () { S.step = 1; drawForm(); postHeight(); };
   ["name", "phone", "note"].forEach(function (id) { $(id).addEventListener("input", drawForm); });
   $("kvkk").addEventListener("change", drawForm);
