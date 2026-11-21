@@ -452,6 +452,11 @@ body.embed .hero { display: none; }
           !canContinue(stayBounds(S.ci, S.co))) {
         throw new Error("Müsaitlik doğrulanamadı. Lütfen seçiminizi kontrol edin.");
       }
+      // The visitor may edit these fields or withdraw consent while load() is pending.
+      if (!$("kvkk").checked || request.p_name !== $("name").value.trim() ||
+          request.p_phone !== $("phone").value.trim() || request.p_note !== $("note").value.trim()) {
+        throw new Error("Bilgileriniz veya onayınız değişti. Kontrol edip talebi tekrar gönderin.");
+      }
       return rpc("submit_booking_request", request);
     }).then(function () {
       $("step1").classList.add("hidden"); $("step2").classList.add("hidden");
